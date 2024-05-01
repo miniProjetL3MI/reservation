@@ -91,7 +91,7 @@
                 android:drawableEnd="@drawable/search_icon"
                 android:drawablePadding="8dp"
                 android:ems="10"
-                android:hint="Search For..."
+                android:hint="Search For.."
                 android:gravity="center"
                 android:inputType="textPersonName"
                 android:paddingStart="20dp"
