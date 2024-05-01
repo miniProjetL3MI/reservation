@@ -7,18 +7,102 @@
     android:background="#EFF0FC">
 
     <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="219dp"
-        android:layout_height="328dp"
-        app:srcCompat="@drawable/top_tight"
-        tools:layout_editor_absoluteX="203dp"
-        tools:layout_editor_absoluteY="-43dp" />
-
-    <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/imageView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:srcCompat="@drawable/bottom_left"
-        tools:layout_editor_absoluteX="-11dp" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-23dp" />
+
+    <ImageView
+        android:id="@+id/imageView17"
+        android:layout_width="265dp"
+        android:layout_height="286dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/top_tight"
+        tools:layout_editor_absoluteX="144dp"
+        tools:layout_editor_absoluteY="-29dp"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:text="Formulaire Medecin"
+        android:textColor="@color/purple_700"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="278dp" />
+
+    <EditText
+        android:id="@+id/editTextTextNom"
+        android:layout_width="372dp"
+        android:layout_height="54dp"
+        android:background="@drawable/edittext_background"
+        android:drawableStart="@drawable/name"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Nom"
+        android:inputType="textPersonName"
+        android:textColorHint="#756C6C"
+        android:textSize="18sp"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="334dp"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextprenom"
+        android:layout_width="369dp"
+        android:layout_height="59dp"
+        android:background="@drawable/edittext_background"
+        android:drawableStart="@drawable/name"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Prénom"
+        android:inputType="textPersonName"
+        android:textColorHint="#756C6C"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="388dp" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="369dp"
+        android:layout_height="62dp"
+        android:background="@drawable/edittext_background"
+        android:drawableStart="@drawable/email"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textColorHint="#756C6C"
+        android:textSize="18sp"
+        tools:ignore="MissingConstraints,DuplicateClickableBoundsCheck"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="447dp" />
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="369dp"
+        android:layout_height="62dp"
+        android:background="@drawable/edittext_background"
+        android:drawableStart="@drawable/email"
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textPersonName"
+        android:textColorHint="#756C6C"
+        android:textSize="18sp"
+        tools:ignore="DuplicateIds,MissingConstraints"
+        tools:layout_editor_absoluteX="24dp"
+        tools:layout_editor_absoluteY="447dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
