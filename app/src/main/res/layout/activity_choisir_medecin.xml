@@ -100,9 +100,6 @@
                 android:textColorHint="#CED2FF"
                 android:textSize="18sp"
                 android:textStyle="italic|bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
-                app:layout_constraintTop_toStartOf="parent"
                 tools:ignore="RtlCompat" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
