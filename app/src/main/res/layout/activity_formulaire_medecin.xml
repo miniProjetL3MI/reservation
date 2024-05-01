@@ -140,7 +140,7 @@
         android:inputType="text"
         android:textColorHint="#756C6C"
         android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmail"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextAdresse"
         tools:ignore="MissingConstraints" />
 
     <EditText
