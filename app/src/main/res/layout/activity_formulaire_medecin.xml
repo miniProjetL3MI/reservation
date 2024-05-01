@@ -38,13 +38,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="278dp" />
+        tools:layout_editor_absoluteY="278dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/editTextTextNom"
-        android:layout_width="372dp"
-        android:layout_height="54dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edittext_background"
         android:drawableStart="@drawable/name"
         android:drawablePadding="16dp"
@@ -53,14 +54,14 @@
         android:inputType="textPersonName"
         android:textColorHint="#756C6C"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="334dp"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
         tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextprenom"
-        android:layout_width="369dp"
-        android:layout_height="59dp"
+        android:id="@+id/editTextTextPrenom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edittext_background"
         android:drawableStart="@drawable/name"
         android:drawablePadding="16dp"
@@ -69,40 +70,104 @@
         android:inputType="textPersonName"
         android:textColorHint="#756C6C"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="388dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextNom"
+        tools:ignore="MissingConstraints" />
+
+    <!-- Ajout des nouveaux champs -->
+    <EditText
+        android:id="@+id/editTextTextNumTel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background"
+
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Numéro de téléphone"
+        android:inputType="phone"
+        android:textColorHint="#756C6C"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPrenom"
+        tools:ignore="MissingConstraints" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="369dp"
-        android:layout_height="62dp"
+        android:id="@+id/editTextTextEmail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edittext_background"
         android:drawableStart="@drawable/email"
         android:drawablePadding="16dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:textColorHint="#756C6C"
         android:textSize="18sp"
-        tools:ignore="MissingConstraints,DuplicateClickableBoundsCheck"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="447dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextNumTel"
+        tools:ignore="MissingConstraints" />
+
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
-        android:layout_width="369dp"
-        android:layout_height="62dp"
+        android:id="@+id/editTextTextSpecialite"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:background="@drawable/edittext_background"
-        android:drawableStart="@drawable/email"
+
         android:drawablePadding="16dp"
         android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName"
+        android:hint="Spécialité"
+        android:inputType="text"
         android:textColorHint="#756C6C"
         android:textSize="18sp"
-        tools:ignore="DuplicateIds,MissingConstraints"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="447dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmail"
+        tools:ignore="MissingConstraints" />
 
+    <EditText
+        android:id="@+id/editTextTextHeureOuverture"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background"
+
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Heure d'ouverture"
+        android:inputType="text"
+        android:textColorHint="#756C6C"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextSpecialite"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTextHeureFermeture"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background"
+
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Heure de fermeture"
+        android:inputType="text"
+        android:textColorHint="#756C6C"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextHeureOuverture"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/editTextTextJourTravail"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edittext_background"
+
+        android:drawablePadding="16dp"
+        android:ems="10"
+        android:hint="Jour de travail"
+        android:inputType="text"
+        android:textColorHint="#756C6C"
+        android:textSize="18sp"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextHeureFermeture"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
