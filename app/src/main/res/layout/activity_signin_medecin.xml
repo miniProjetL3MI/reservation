@@ -6,6 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#EFF0FC"
+    android:rotationX="360"
+    android:rotationY="360"
     tools:context=".activities.SignUpActivity">
 
     <ScrollView
@@ -56,6 +58,7 @@
                 android:inputType="textPersonName"
                 android:textColorHint="#756C6C"
                 android:textSize="18sp" />
+
             <EditText
                 android:id="@+id/editTextTextPrenom"
                 android:layout_width="match_parent"
@@ -77,7 +80,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_constraintHorizontal_bias="0.0"
-                android:layout_constraintTop_toButtomOf="@+id/editTextTextPersonName3"
+                android:layout_constraintTop_toButtomOf="@+id/editTextTextNom"
                 android:layout_constraintEnd_toEndOf="parent"
                 android:layout_constraintStart_toStartOf="parent"
                 android:layout_marginStart="32dp"
@@ -110,44 +113,6 @@
                 android:textColorHint="#756C6C"
                 android:textSize="18sp" />
 
-            <EditText
-                android:id="@+id/editTextTextDateNaiss"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_constraintHorizontal_bias="0.0"
-                android:layout_constraintTop_toButtomOf="@+id/editTextTextPersonName3"
-                android:layout_constraintEnd_toEndOf="parent"
-                android:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/edittext_background"
-                android:drawableStart="@drawable/datenaiss"
-                android:drawablePadding="16dp"
-                android:ems="10"
-                android:hint="Date de naissance"
-                android:inputType="textPersonName"
-                android:textColorHint="#756C6C"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/editTextTextTelephone"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_constraintTop_toButtomOf="@+id/textView"
-                android:layout_constraintEnd_toEndOf="parent"
-                android:layout_constraintStart_toStartOf="parent"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/edittext_background"
-                android:drawableStart="@drawable/telephonenew"
-                android:drawablePadding="16dp"
-                android:ems="10"
-                android:hint="téléphone"
-                android:inputType="textPersonName"
-                android:textColorHint="#756C6C"
-                android:textSize="18sp" />
 
             <ImageView
                 android:id="@+id/imageView2"
