@@ -23,9 +23,6 @@ public class LoginActivity extends AppCompatActivity {
         btn=findViewById(R.id.bouttonLogin);
         newUser=findViewById(R.id.newUtilisateur);
 
-        btn.setOnClickListener(view -> Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_SHORT).show())
-
-        ;
+        btn.setOnClickListener(view -> Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_SHORT).show());
     }
-
 }
