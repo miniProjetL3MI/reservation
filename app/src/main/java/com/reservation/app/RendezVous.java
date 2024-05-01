@@ -4,6 +4,30 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class RendezVous implements Parcelable {
+    public int getIdRDV() {
+        return idRDV;
+    }
+
+    public void setIdRDV(int idRDV) {
+        this.idRDV = idRDV;
+    }
+
+    public String getHeurRDV() {
+        return heurRDV;
+    }
+
+    public void setHeurRDV(String heurRDV) {
+        this.heurRDV = heurRDV;
+    }
+
+    public String getDateRDV() {
+        return dateRDV;
+    }
+
+    public void setDateRDV(String dateRDV) {
+        this.dateRDV = dateRDV;
+    }
+
     private int idRDV;
     private String heurRDV;
     private String dateRDV;
@@ -35,7 +59,7 @@ public class RendezVous implements Parcelable {
     }
 
     @Override
-    public void writeToParcel(Parcel dest, int flag) {
+    public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(idRDV);
         dest.writeString(heurRDV);
         dest.writeString(dateRDV);
