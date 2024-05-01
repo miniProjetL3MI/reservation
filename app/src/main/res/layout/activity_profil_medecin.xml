@@ -136,6 +136,12 @@
                         android:textColor="#ffffff"
                         android:textSize="18sp"
                         android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/view_id_cabinet"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="TextView" />
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>

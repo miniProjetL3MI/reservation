@@ -34,7 +34,7 @@ public class CabinetAdapter extends ArrayAdapter<CabinetMedicale>{
         if(convertView == null){
             convertView = LayoutInflater.from(getContext()).inflate(
                     //la classe ou on affiche les cabinet
-                    R.layout.cabinet_list_view_row, parent, false
+                    R.layout.activity_profil_medecin, parent, false
             );
         }
         //id de la page du cabinet
