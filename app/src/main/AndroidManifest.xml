@@ -27,7 +27,7 @@
             </intent-filter>
         </activity>
 
-        <!-- Déclaration de l'activité ChoisirSpecialitesActivity -->
+
         <activity android:name=".ChoisirSpecialitesActivity"
             android:exported="true"
             android:label="@string/app_name"

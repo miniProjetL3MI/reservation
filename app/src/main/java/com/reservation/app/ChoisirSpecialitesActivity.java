@@ -1,7 +1,5 @@
 package com.reservation.app;
-
 import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class ChoisirSpecialitesActivity extends AppCompatActivity {
