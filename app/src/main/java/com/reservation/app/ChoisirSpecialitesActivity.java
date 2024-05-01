@@ -10,4 +10,5 @@ public class ChoisirSpecialitesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choisir_specialites);
     }
+
 }
