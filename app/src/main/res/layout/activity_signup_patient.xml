@@ -23,7 +23,7 @@
             <ImageView
                 android:id="@+id/imageView1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="342dp"
                 android:scaleType="fitXY"
                 app:srcCompat="@drawable/top_background2" />
 
@@ -35,7 +35,7 @@
                 android:layout_marginRight="32dp"
                 android:text="Créer \nun compte"
                 android:textColor="#6677FF"
-                android:textSize="40sp"
+                android:textSize="33sp"
                 android:textStyle="bold" />
 
             <EditText
