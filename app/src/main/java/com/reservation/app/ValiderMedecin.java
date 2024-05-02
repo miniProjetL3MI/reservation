@@ -25,6 +25,4 @@ public class ValiderMedecin extends AppCompatActivity {
         btn=findViewById(R.id.imageView6);
         btn.setOnClickListener(view -> Toast.makeText(getApplicationContext(),"Login Success",Toast.LENGTH_SHORT).show());
     }
-
-
-    }
+}
