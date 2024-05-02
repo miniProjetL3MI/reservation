@@ -2,12 +2,16 @@ package com.reservation.app;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.core.content.ContextCompat;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +29,54 @@ public class LoginActivity extends AppCompatActivity {
         edPassword=findViewById(R.id.editTextTextPasswordName);
         btn=findViewById(R.id.bouttonLogin);
         newUser=findViewById(R.id.newUtilisateur);
+
+        // Ajout de l'écouteur de texte pour edUserName
+        edUserName.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Ne rien faire avant le changement de texte
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Ne rien faire pendant le changement de texte
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Vérifier si le texte est vide
+                if (s.toString().trim().isEmpty()) {
+                    // Si le texte est vide, afficher le hint avec la couleur grise
+                    edUserName.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorHint)); // Couleur grise définie dans les ressources
+                } else {
+                    // Si le texte n'est pas vide, afficher le texte en noir
+                    edUserName.setTextColor(getResources().getColor(android.R.color.black)); // Couleur noire par défaut d'Android
+                }
+            }
+        });
+        edPassword.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Ne rien faire avant le changement de texte
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Ne rien faire pendant le changement de texte
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                // Vérifier si le texte est vide
+                if (s.toString().trim().isEmpty()) {
+                    // Si le texte est vide, afficher le hint avec la couleur grise
+                    edPassword.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.colorHint)); // Couleur grise définie dans les ressources
+                } else {
+                    // Si le texte n'est pas vide, afficher le texte en noir
+                    edPassword.setTextColor(getResources().getColor(android.R.color.black)); // Couleur noire par défaut d'Android
+                }
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
