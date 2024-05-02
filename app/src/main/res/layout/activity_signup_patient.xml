@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EFF0FC"
+    android:background="#E8E8F9"
     tools:context=".activities.SignUpActivity">
 
     <ScrollView
@@ -131,14 +131,32 @@
                 android:textColorHint="#756C6C"
                 android:textSize="18sp" />
 
-            <ImageView
-                android:id="@+id/btnSignUpPatient"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                app:srcCompat="@drawable/btn_arraw1" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/btnSignUpPatient"
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    app:srcCompat="@drawable/btn_arraw2" />
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="160dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginStart="150dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="32dp"
+                    app:srcCompat="@drawable/btn_arraw1" />
+            </LinearLayout>
 
 
         </LinearLayout>
