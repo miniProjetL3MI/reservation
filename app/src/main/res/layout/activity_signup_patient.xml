@@ -132,7 +132,7 @@
                 android:textSize="18sp" />
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/btnSignUpPatient"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
