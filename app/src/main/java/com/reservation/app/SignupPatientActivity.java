@@ -193,7 +193,6 @@ public class SignupPatientActivity extends AppCompatActivity {
                         startActivity(new Intent(SignupPatientActivity.this,ChoisirSpecialitesActivity.class));
 
                     }
-
                 }
             });
         btnreturn.setOnClickListener(new View.OnClickListener() {
