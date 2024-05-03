@@ -25,9 +25,9 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(qry4);
         String qry5 = "create table cabinetmedical(idcabinet integer primary key autoincrement,adresse text not null)";
         sqLiteDatabase.execSQL(qry5);
-        String qry6 = "create table rendezvous(idrendezvous integer primary key autoincrement,heurrendezvous text not null,daterendezrvous text not null,idAssistante integer,idPatient integer,foreign key (idAssistante) references assistante(idUtilisateur),foreign key (idPatient) references Patient(idUtilisateur) )";
+        String qry6 = "create table rendezvous(idrendezvous integer primary key autoincrement,heurrendezvous text not null,daterendezrvous text not null,idAssistante integer,idPatient integer,foreign key (idAssistante) references assistante(idUtilisateur),foreign key (idPatient) references patient(idUtilisateur) )";
         sqLiteDatabase.execSQL(qry6);
-        String qry7 = "create table Choisir(idMedecin integer,idUtilisateur integer, foreign key (idMedecin) references medecin(idMedecin),foreign key (idUtilisateur) references Patient(idUtilisateur),primary key(idMedecin, idUtilisateur))";
+        String qry7 = "create table Choisir(idMedecin integer,idUtilisateur integer, foreign key (idMedecin) references medecin(idMedecin),foreign key (idUtilisateur) references patient(idUtilisateur),primary key(idMedecin, idUtilisateur))";
         sqLiteDatabase.execSQL(qry7);
     }
 
@@ -75,7 +75,7 @@ public class Database extends SQLiteOpenHelper {
         cv3.put("email ",email );
         cv3.put("motDePasse",motdepasse);
         SQLiteDatabase db3 = getWritableDatabase();
-        db3.insert("admine",null ,cv3);
+        db3.insert("admin",null ,cv3);
         db3.close();
     }
     public void registercabinet(String adresse){
@@ -88,7 +88,7 @@ public class Database extends SQLiteOpenHelper {
         ContentValues cv4 =new ContentValues();
         cv4.put("heurrendezvous",heurrendezvous);
         cv4.put("daterendezvous",daterendezvous);
-        SQLiteDatabase db4= getWritableDatabase();db4.insert("cabinetmedical",null ,cv4);
+        SQLiteDatabase db4= getWritableDatabase();db4.insert("rendezvous",null ,cv4);
         db4.close();
     }
 }
