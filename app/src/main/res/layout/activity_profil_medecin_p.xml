@@ -228,9 +228,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
-                            android:text="AdresseCabinet"
+                            android:text="Adress Cabinet"
                             android:textColor="#222252"
-                            android:textSize="18sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -271,7 +271,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
-                            android:text="043.....39"
+                            android:text="043***39"
                             android:textColor="#222252"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -365,7 +365,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
-                            android:text="7 jours"
+                            android:text="   7 jours"
                             android:textColor="#222252"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -416,7 +416,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
-                            android:text="08:00"
+                            android:text="    08:00"
                             android:textColor="#222252"
                             android:textSize="18sp"
                             android:textStyle="bold" />
@@ -459,7 +459,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="20dp"
-                            android:text="17:00"
+                            android:text="    17:00"
                             android:textColor="#222252"
                             android:textSize="18sp"
                             android:textStyle="bold" />
