@@ -28,7 +28,7 @@
                     android:scaleType="centerCrop"
                     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                     app:title="
-                Liste des rendez-vous" />
+             historique des rendez-vous"/>
 
             </com.google.android.material.appbar.AppBarLayout>
 
@@ -75,7 +75,7 @@
                         android:layout_width="58dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="7dp"
-                        app:srcCompat="@drawable/profile" />
+                        app:srcCompat="@drawable/profile2" />
 
                     <TextView
                         android:id="@+id/textView15"
@@ -83,7 +83,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="10dp"
                         android:layout_marginTop="14dp"
-                        android:text="Lion Fischer"
+                        android:text="Abbi Johnson"
                         android:textSize="19dp"
                         android:textStyle="bold" />
 
