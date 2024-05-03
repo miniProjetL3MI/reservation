@@ -2,6 +2,7 @@ package com.reservation.app;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -27,7 +28,7 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(qry5);
         String qry6 = "create table rendezvous(idrendezvous integer primary key autoincrement,heurrendezvous text not null,daterendezrvous text not null,idAssistante integer,idPatient integer,foreign key (idAssistante) references assistante(idUtilisateur),foreign key (idPatient) references patient(idUtilisateur) )";
         sqLiteDatabase.execSQL(qry6);
-        String qry7 = "create table Choisir(idMedecin integer,idUtilisateur integer, foreign key (idMedecin) references medecin(idMedecin),foreign key (idUtilisateur) references patient(idUtilisateur),primary key(idMedecin, idUtilisateur))";
+        String qry7 = "create table choisir(idMedecin integer,idUtilisateur integer, foreign key (idMedecin) references medecin(idMedecin),foreign key (idUtilisateur) references patient(idUtilisateur),primary key(idMedecin, idUtilisateur))";
         sqLiteDatabase.execSQL(qry7);
     }
 
@@ -90,5 +91,17 @@ public class Database extends SQLiteOpenHelper {
         cv4.put("daterendezvous",daterendezvous);
         SQLiteDatabase db4= getWritableDatabase();db4.insert("rendezvous",null ,cv4);
         db4.close();
+    }
+    public int login(String nom ,String motdepasse){
+        int result=0;
+        String str[]=new String[2];
+        str[0]=nom;
+        str[1]=motdepasse;
+        SQLiteDatabase db =getWritableDatabase();
+        Cursor c= db.rawQuery("select * from patient where nom =? and motDePasse =?",str);
+        if(c.moveToFirst()){
+            result=1;
+        }
+        return result;
     }
 }

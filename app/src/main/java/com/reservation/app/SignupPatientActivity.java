@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
 
 public class SignupPatientActivity extends AppCompatActivity {
     EditText edNom, edPrenom, edMail, edMdp, edDateNaissance, edTel;
-    ImageView btnSignup;
+    ImageView btnSignup,btnreturn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +26,8 @@ public class SignupPatientActivity extends AppCompatActivity {
         edMdp=findViewById(R.id.editTextTextMotDePasse);
         edDateNaissance=findViewById(R.id.editTextTextDateNaiss);
         edTel=findViewById(R.id.editTextTextTelephone);
-        btnSignup=findViewById(R.id.btnSignUpPatient);
-
+        btnSignup=findViewById(R.id.imageView15);
+        btnreturn =findViewById(R.id.btnSignUpPatient);
 
 
         edNom.addTextChangedListener(new TextWatcher() {
@@ -177,11 +177,15 @@ public class SignupPatientActivity extends AppCompatActivity {
                     String userMdp=edMdp.getText().toString();
                     String userNaissance=edDateNaissance.getText().toString();
                     String userTel=edTel.getText().toString();
+                    Database db = new Database(getApplicationContext(),"miniprojet",null,1);
+
+
 
                     if(userName.length() == 0|| userPrenom.length() == 0 || userMail.length() == 0 || userMdp.length() == 0 || userNaissance.length() == 0 ||
                             userTel.length() == 0){
                         Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                     }else {
+                        db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance);
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupPatientActivity.this,ChoisirSpecialitesActivity.class));
 
@@ -189,6 +193,12 @@ public class SignupPatientActivity extends AppCompatActivity {
 
                 }
             });
+        btnreturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(SignupPatientActivity.this, LoginActivity.class));
+            }
+        });
 
 
     }
