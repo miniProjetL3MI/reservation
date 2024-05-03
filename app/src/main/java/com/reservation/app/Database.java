@@ -15,18 +15,20 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        String qry1 ="create table medecin(idMedecin,nom text ,prenom text ,numTelephone text ,specialite text ,email text ,heurOuverture text ,heurFermeture,jourTravail text )";
+        String qry1 ="create table medecin(idMedecin integer primary key autoincrement,nom text not null ,prenom text not null ,numTelephone text not null unique,specialite text not null ,email text not null unique,heurOuverture text not null ,heurFermeture text not null,jourTravail text not null)";
         sqLiteDatabase.execSQL(qry1);
-        String qry2 ="create table assisstante(idAssistante,nom text ,prenom text ,email text ,motDePasse text )";
+        String qry2 ="create table assisstante(idUtilisateur integer primary key autoincrement,nom text not null,prenom text not null,email text not null unique,motDePasse text not null unique ,idMedecin integer,foreign key (idMedecin) references medecin(idMedecin))";
         sqLiteDatabase.execSQL(qry2);
-        String qry3 = "create table patient(idPatient,nom text ,prenom text ,email text ,motDePasse text,datedenaiss text)";
+        String qry3 = "create table patient(idUtilisateur integer primary key autoincrement,nom text not null ,prenom text not null,email text not null unique,motDePasse text not null unique,datedenaiss text not null)";
         sqLiteDatabase.execSQL(qry3);
-        String qry4 = "create table admin(idAdmine,nom text ,prenom text ,email text ,motDePasse text)";
+        String qry4 = "create table admin(idUtilisateur integer primary key autoincrement,nom text not null ,prenom text not null,email text not null unique ,motDePasse text not null unique)";
         sqLiteDatabase.execSQL(qry4);
-        String qry5 = "create table cabinetmedical(idcabinet,adresse text)";
+        String qry5 = "create table cabinetmedical(idcabinet integer primary key autoincrement,adresse text not null)";
         sqLiteDatabase.execSQL(qry5);
-        String qry6 = "create table rendezvous(idrendezvous,heurrendezvous text,daterendezrvous text)";
+        String qry6 = "create table rendezvous(idrendezvous integer primary key autoincrement,heurrendezvous text not null,daterendezrvous text not null,idAssistante integer,idPatient integer,foreign key (idAssistante) references assistante(idUtilisateur),foreign key (idPatient) references Patient(idUtilisateur) )";
         sqLiteDatabase.execSQL(qry6);
+        String qry7 = "create table Choisir(idMedecin integer,idUtilisateur integer, foreign key (idMedecin) references medecin(idMedecin),foreign key (idUtilisateur) references Patient(idUtilisateur),primary key(idMedecin, idUtilisateur))";
+        sqLiteDatabase.execSQL(qry7);
     }
 
     @Override
