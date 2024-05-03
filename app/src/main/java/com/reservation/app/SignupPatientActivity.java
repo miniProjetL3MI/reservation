@@ -187,6 +187,7 @@ public class SignupPatientActivity extends AppCompatActivity {
                     }else {
 
 
+
                         db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance);
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupPatientActivity.this,ChoisirSpecialitesActivity.class));
