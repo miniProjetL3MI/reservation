@@ -42,7 +42,8 @@ public class Database extends SQLiteOpenHelper {
         cv.put("prenom",prenom);
         cv.put("email ",email );
         cv.put("motDePasse",motdepasse);
-        SQLiteDatabase db = getWritableDatabase();db.insert("assisstante",null ,cv);
+        SQLiteDatabase db = getWritableDatabase();
+        db.insert("assisstante",null ,cv);
         db.close();
     }
     public void registermedecin(String nom ,String prenom ,String numTelephone ,String specialite ,String email ,String heurOuverture ,String heurFermeture ,String jourTravail){
@@ -92,13 +93,13 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db4= getWritableDatabase();db4.insert("rendezvous",null ,cv4);
         db4.close();
     }
-    public int login(String nom ,String motdepasse){
+    public int login(String email ,String motdepasse){
         int result=0;
         String str[]=new String[2];
-        str[0]=nom;
+        str[0]=email;
         str[1]=motdepasse;
         SQLiteDatabase db =getWritableDatabase();
-        Cursor c= db.rawQuery("select * from patient where nom =? and motDePasse =?",str);
+        Cursor c= db.rawQuery("select * from patient where email =? and motDePasse =?",str);
         if(c.moveToFirst()){
             result=1;
         }
