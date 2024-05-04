@@ -90,9 +90,10 @@ public class LoginActivity extends AppCompatActivity {
                 }else {
                      if(db.login(username, password)==1 ){
                         Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
-                         SharedPreferences sharedPreferences =getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+                         SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
                          SharedPreferences.Editor editor = sharedPreferences.edit();
                          editor.putString("nom",username);
+
                          editor.apply();
                          startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
                      }else{
