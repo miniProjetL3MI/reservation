@@ -193,6 +193,9 @@ public class SignupPatientActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("nom", userName);
                         editor.putString("prenom", userPrenom);
+                        editor.putString("email",userMail);
+
+
                         editor.apply();
 
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
