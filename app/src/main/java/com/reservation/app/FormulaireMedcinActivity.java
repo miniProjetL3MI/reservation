@@ -232,9 +232,16 @@ public class FormulaireMedcinActivity extends AppCompatActivity {
                 if(userName.length() == 0|| userPrenom.length() == 0 || userNumTel.length() == 0 || userAdresse.length() == 0 || userSpecialite.length() == 0 || userHeureOuverture.length() == 0 || userHeureFermeture.length() == 0 || userJourTravail.length() == 0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
-                    db.registermedecin(userName, userPrenom, userNumTel, userAdresse , userSpecialite , userHeureOuverture , userHeureFermeture , userJourTravail);
-                    Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(FormulaireMedcinActivity.this,ChoisirSpecialitesActivity.class));
+                    if (SignupPatientActivity.Utils.isValidTel(userNumTel) ){
+
+                        db.registermedecin(userName, userPrenom, userNumTel, userAdresse , userSpecialite , userHeureOuverture , userHeureFermeture , userJourTravail);
+                        Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(FormulaireMedcinActivity.this,ChoisirSpecialitesActivity.class));
+                    } else {
+                        edNumTel.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                        edNumTel.setBackgroundResource(R.drawable.rouge_backround);
+                    }
+
 
                 }
             }

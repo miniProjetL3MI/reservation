@@ -155,11 +155,7 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                         startActivity(new Intent(SignupAssistanteActivity.this,FormulaireMedcinActivity.class));
                     } else {
                         edMail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                        GradientDrawable border = new GradientDrawable();
-                        border.setColor(0xE8E8F9); // Couleur de fond
-                        border.setStroke(0, Color.TRANSPARENT); // Pas de bordure sur les autres côtés
-                        border.setStroke(2, 0xFFFF0000);
-                        edMail.setBackground(border);
+                        edMail.setBackgroundResource(R.drawable.rouge_backround);
                     }
                 }
             }

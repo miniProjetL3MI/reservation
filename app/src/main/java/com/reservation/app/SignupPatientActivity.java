@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -16,20 +17,20 @@ import androidx.core.content.ContextCompat;
 
 public class SignupPatientActivity extends AppCompatActivity {
     EditText edNom, edPrenom, edMail, edMdp, edDateNaissance, edTel;
-    ImageView btnSignup,btnreturn;
+    ImageView btnSignup, btnreturn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_patient);
-        edNom=findViewById(R.id.editTextTextNom);
-        edPrenom=findViewById(R.id.editTextTextPrenom);
-        edMail=findViewById(R.id.editTextTextEmail);
-        edMdp=findViewById(R.id.editTextTextMotDePasse);
-        edDateNaissance=findViewById(R.id.editTextTextDateNaiss);
-        edTel=findViewById(R.id.editTextTextTelephone);
-        btnSignup=findViewById(R.id.imageView15);
-        btnreturn =findViewById(R.id.btnSignUpPatient);
+        edNom = findViewById(R.id.editTextTextNom);
+        edPrenom = findViewById(R.id.editTextTextPrenom);
+        edMail = findViewById(R.id.editTextTextEmail);
+        edMdp = findViewById(R.id.editTextTextMotDePasse);
+        edDateNaissance = findViewById(R.id.editTextTextDateNaiss);
+        edTel = findViewById(R.id.editTextTextTelephone);
+        btnSignup = findViewById(R.id.imageView15);
+        btnreturn = findViewById(R.id.btnSignUpPatient);
 
 
         edNom.addTextChangedListener(new TextWatcher() {
@@ -170,38 +171,61 @@ public class SignupPatientActivity extends AppCompatActivity {
                 }
             }
         });
-             btnSignup.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    String userName=edNom.getText().toString();
-                    String userPrenom=edPrenom.getText().toString();
-                    String userMail=edMail.getText().toString();
-                    String userMdp=edMdp.getText().toString();
-                    String userNaissance=edDateNaissance.getText().toString();
-                    String userTel=edTel.getText().toString();
-                    Database db = new Database(getApplicationContext(),"miniprojet",null,1);
+        btnSignup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String userName = edNom.getText().toString();
+                String userPrenom = edPrenom.getText().toString();
+                String userMail = edMail.getText().toString();
+                String userMdp = edMdp.getText().toString();
+                String userNaissance = edDateNaissance.getText().toString();
+                String userTel = edTel.getText().toString();
+                Database db = new Database(getApplicationContext(), "miniprojet", null, 1);
 
 
+                if (userName.length() == 0 || userPrenom.length() == 0 || userMail.length() == 0 || userMdp.length() == 0 || userNaissance.length() == 0 ||
+                        userTel.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (SignupAssistanteActivity.Utils.isValidEmail(edMail.getText().toString()) && SignupPatientActivity.Utils.isValidTel(userTel) && SignupPatientActivity.Utils.isValidDate(userNaissance)) {
 
-                    if (userName.length() == 0 || userPrenom.length() == 0 || userMail.length() == 0 || userMdp.length() == 0 || userNaissance.length() == 0 || userTel.length() == 0) {
-                        Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plaît", Toast.LENGTH_SHORT).show();
-                    } else {
                         db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance, userTel);
                         SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                        editor.putString("email", userMail);
-                        editor.putString("motdepasse", userMdp);
                         editor.putString("nom", userName);
                         editor.putString("prenom", userPrenom);
-                        editor.apply();
+                        editor.putString("email", userMail);
 
+
+                        editor.apply();
 
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupPatientActivity.this, ChoisirSpecialitesActivity.class));
+                    } else {
+                        if (!SignupAssistanteActivity.Utils.isValidEmail(edMail.getText().toString())) {
+                            edMail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edMail.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edMail.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                        if (!SignupPatientActivity.Utils.isValidTel(userTel)) {
+                            edTel.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edTel.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edTel.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                        if (!SignupPatientActivity.Utils.isValidDate(userNaissance)) {
+                            edDateNaissance.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edDateNaissance.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edDateNaissance.setBackgroundResource(R.drawable.edittext_background);
+                        }
                     }
 
+
                 }
-            });
+            }
+        });
         btnreturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -210,5 +234,236 @@ public class SignupPatientActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    public static class Utils {
+
+        public static boolean isValidTel(String phonenumber) {
+            int i = 0;
+            char c = phonenumber.charAt(i);
+            if (phonenumber.length() == 10) {
+                if (c == '0') {
+                    i++;
+                    c = phonenumber.charAt(i);
+                    if (c == '5' || c == '6' || c == '7') {
+                        return true;
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+
+        }
+
+        public static boolean isValidDate(String date) {
+            int i = 0;
+            char c = date.charAt(i);
+            if (date.length() == 10) {
+                if (c == '0' || c == '2' ||c=='1') {
+                    i++;
+                    c = date.charAt(i);
+                    if (c <= '9') {
+                        i++;
+                        c = date.charAt(i);
+                        if (c == '/') {
+                            i++;
+                            c = date.charAt(i);
+                            if (c == '0') {
+                                i++;
+                                c = date.charAt(i);
+                                if (c <= '9') {
+                                    i++;
+                                    c = date.charAt(i);
+                                    if (c == '/') {
+                                        i++;
+                                        c = date.charAt(i);
+                                        if (c == '1' || c == '2') {
+                                            i++;
+                                            c = date.charAt(i);
+                                            if (c == '9' || c == '0') {
+                                                i++;
+                                                c = date.charAt(i);
+                                                if (c <= '9') {
+                                                    i++;
+                                                    c = date.charAt(i);
+                                                    if (c <= '9') {
+                                                        return true;
+
+                                                    } else {
+                                                        return false;
+                                                    }
+                                                } else {
+                                                    return false;
+                                                }
+                                            } else {
+                                                return false;
+                                            }
+                                        } else {
+                                            return false;
+                                        }
+                                    } else {
+                                        return false;
+                                    }
+                                } else {
+                                    return false;
+                                }
+                            } else if (c == '1') {
+                                i++;
+                                c = date.charAt(i);
+                                if (c <= '2') {
+                                    i++;
+                                    c = date.charAt(i);
+                                    if (c == '/') {
+                                        i++;
+                                        c = date.charAt(i);
+                                        if (c == '1' || c == '2') {
+                                            i++;
+                                            c = date.charAt(i);
+                                            if (c == '9' || c == '0') {
+                                                i++;
+                                                c = date.charAt(i);
+                                                if (c <= '9') {
+                                                    i++;
+                                                    c = date.charAt(i);
+                                                    if (c <= '9') {
+                                                        return true;
+
+                                                    } else {
+                                                        return false;
+                                                    }
+                                                } else {
+                                                    return false;
+                                                }
+                                            } else {
+                                                return false;
+                                            }
+                                        } else {
+                                            return false;
+                                        }
+                                    } else {
+                                        return false;
+                                    }
+                                } else {
+                                    return false;
+                                }
+                            } else {
+                                return false;
+                            }
+                        } else {
+                            return false;
+                        }
+                    } else {
+                        return false;
+                    }
+
+                } else if (c == '3') {
+                    i++;
+                    c = date.charAt(i);
+                    if (c <= '2') {
+                        i++;
+                        c = date.charAt(i);
+                        if (c == '/') {
+                            i++;
+                            c = date.charAt(i);
+                            if (c == '0') {
+                                i++;
+                                c = date.charAt(i);
+                                if (c <= '9') {
+                                    i++;
+                                    c = date.charAt(i);
+                                    if (c == '/') {
+                                        i++;
+                                        c = date.charAt(i);
+                                        if (c == '1' || c == '2') {
+                                            i++;
+                                            c = date.charAt(i);
+                                            if (c == '9' || c == '0') {
+                                                i++;
+                                                c = date.charAt(i);
+                                                if (c <= '9') {
+                                                    i++;
+                                                    c = date.charAt(i);
+                                                    if (c <= '9') {
+                                                        return true;
+
+                                                    } else {
+                                                        return false;
+                                                    }
+                                                } else {
+                                                    return false;
+                                                }
+                                            } else {
+                                                return false;
+                                            }
+                                        } else {
+                                            return false;
+                                        }
+                                    } else {
+                                        return false;
+                                    }
+                                } else {
+                                    return false;
+                                }
+                            } else if (c == '1') {
+                                i++;
+                                c = date.charAt(i);
+                                if (c <= '2') {
+                                    i++;
+                                    c = date.charAt(i);
+                                    if (c == '/') {
+                                        i++;
+                                        c = date.charAt(i);
+                                        if (c == '1' || c == '2') {
+                                            i++;
+                                            c = date.charAt(i);
+                                            if (c == '9' || c == '0') {
+                                                i++;
+                                                c = date.charAt(i);
+                                                if (c <= '9') {
+                                                    i++;
+                                                    c = date.charAt(i);
+                                                    if (c <= '9') {
+                                                        return true;
+
+                                                    } else {
+                                                        return false;
+                                                    }
+                                                } else {
+                                                    return false;
+                                                }
+                                            } else {
+                                                return false;
+                                            }
+                                        } else {
+                                            return false;
+                                        }
+                                    } else {
+                                        return false;
+                                    }
+                                } else {
+                                    return false;
+                                }
+                            } else {
+                                return false;
+                            }
+                        } else {
+                            return false;
+                        }
+
+                    } else {
+                        return false;
+                    }
+                } else {
+                    return false;
+                }
+
+            } else {
+                return false;
+            }
+        }
     }
 }
