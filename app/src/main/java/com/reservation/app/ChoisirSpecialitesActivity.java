@@ -2,7 +2,7 @@ package com.reservation.app;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,27 +19,18 @@ public class ChoisirSpecialitesActivity extends AppCompatActivity {
         btn2 = findViewById(R.id.imageView9);
         btn3 = findViewById(R.id.imageView5);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ChoisirSpecialitesActivity.this, Medecin.class));
-            }
+        btn1.setOnClickListener(v -> {
+            startActivity(new Intent(ChoisirSpecialitesActivity.this, Medecin.class));
         });
 
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ChoisirSpecialitesActivity.this, Medecin.class));
+        btn2.setOnClickListener(v -> {
+            startActivity(new Intent(ChoisirSpecialitesActivity.this, Medecin.class));
 
-            }
         });
 
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(ChoisirSpecialitesActivity.this, Medecin.class));
+        btn3.setOnClickListener(v -> {
+            startActivity(new Intent(ChoisirSpecialitesActivity.this, Medecin.class));
 
-            }
         });
     }
 }
