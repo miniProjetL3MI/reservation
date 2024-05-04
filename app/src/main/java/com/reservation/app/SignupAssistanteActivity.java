@@ -13,6 +13,7 @@ import android.util.Patterns;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import android.graphics.drawable.GradientDrawable;
+import android.graphics.Color;
 
 public class SignupAssistanteActivity  extends AppCompatActivity {
     EditText edNom,edPrenom,edMail,edMdp;
@@ -147,8 +148,10 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                         edMail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                         GradientDrawable border = new GradientDrawable();
                         border.setColor(0xE8E8F9); // Couleur de fond
-                        border.setStroke(0, 0xFFFF0000); // Aucune bordure sur les côtés gauche, droit et supérieur
-                        border.setStroke(3, 0xFFFF0000);
+                        border.setStroke(0, Color.TRANSPARENT); // Pas de bordure sur les autres côtés
+                        border.setStroke(2, 0xFFFF0000); // Bordure de 2 pixels uniquement sur le côté bas (rouge)
+                        border.setGradientType(GradientDrawable.LINEAR_GRADIENT);
+                        border.setOrientation(GradientDrawable.Orientation.BOTTOM_TOP);
                         edMail.setBackground(border);
                     }
 
