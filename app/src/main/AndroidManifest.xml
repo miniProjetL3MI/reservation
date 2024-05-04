@@ -24,10 +24,10 @@
 
         <activity
             android:name=".activities.SignUpActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".activities.SignInActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true"
@@ -40,42 +40,49 @@
         </activity>
         <activity
             android:name=".ChoisirSpecialitesActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Reservation" />
         <activity
             android:name=".SignupPatientActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Reservation" />
         <activity
             android:name=".SignupAssistanteActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Reservation" />
         <activity
             android:name=".ChoisirRendezVousActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Reservation" />
         <activity
             android:name=".FormulaireMedcinActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Reservation" />
         <activity
             android:name=".ChoisirTypeActivity"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Reservation" />
         <activity
             android:name=".ActivityChoisirMedecin"
-            android:exported="false"
+            android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.Reservation" />
+
         <activity
             android:name=".Activityrendezvous"
             android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation" />
+        <activity
+            android:name=".ProfilMedecinCotePatient"
+            android:exported="true"
+
             android:label="@string/app_name"
             android:theme="@style/Theme.Reservation" />
 

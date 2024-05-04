@@ -1,32 +1,38 @@
 package com.reservation.app;
 
-
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import android.content.SharedPreferences;
-import android.content.Context;
-
-
-import android.widget.TextView;
-
-
-
 public class ActivityChoisirMedecin extends AppCompatActivity {
+    ImageView btn1,btn3;
+    TextView btn2 ,btn4;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choisir_medecin);
-        // Récupérer le nom du patient depuis les SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
-        String nomPatient = sharedPreferences.getString("nom", "");
+        btn1 = findViewById(R.id.imageViewA);
+        btn2=findViewById(R.id.textViewA);
+        btn3 = findViewById(R.id.imageView4);
+        btn4=findViewById(R.id.textView15);
 
-        // Trouver le TextView dans la mise en page XML
-        TextView welcomeTextView = findViewById(R.id.welcomeTextView);
+        btn1.setOnClickListener(v -> {
+            startActivity(new Intent(ActivityChoisirMedecin.this, ProfilMedecinCotePatient.class));
+        });
+        btn2.setOnClickListener(v -> {
+            startActivity(new Intent(ActivityChoisirMedecin.this, ProfilMedecinCotePatient.class));
+        });
+        btn3.setOnClickListener(v -> {
+            startActivity(new Intent(ActivityChoisirMedecin.this, ProfilMedecinCotePatient.class));
+        });
+        btn4.setOnClickListener(v -> {
+            startActivity(new Intent(ActivityChoisirMedecin.this, ProfilMedecinCotePatient.class));
+        });
 
-        // Afficher le message de bienvenue avec le nom du patient
-        welcomeTextView.setText("Bienvenue, " + nomPatient + " !");
     }
 }

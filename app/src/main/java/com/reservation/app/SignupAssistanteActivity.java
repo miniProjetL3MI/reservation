@@ -1,19 +1,19 @@
 package com.reservation.app;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
-import android.util.Patterns;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
-import android.graphics.drawable.GradientDrawable;
-import android.graphics.Color;
 
 public class SignupAssistanteActivity  extends AppCompatActivity {
     EditText edNom,edPrenom,edMail,edMdp;
@@ -136,21 +136,25 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
 
 
 
+
                 if(userName.length() == 0|| userPrenom.length() == 0 || userMail.length() == 0 || userMdp.length() == 0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
                     if (Utils.isValidEmail(edMail.getText().toString())) {
 
                         db.registerassisstante(userName, userPrenom, userMail, userMdp);
+                        SharedPreferences sharedPreferences = getSharedPreferences("shared_prefss", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("email", userMail);
+                        editor.putString("motdepasse", userMdp);
+                        editor.putString("nom", userName);
+                        editor.putString("prenom", userPrenom);
+                        editor.apply();
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupAssistanteActivity.this,FormulaireMedcinActivity.class));
                     } else {
                         edMail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                        GradientDrawable border = new GradientDrawable();
-                        border.setColor(0xE8E8F9); // Couleur de fond
-                        border.setStroke(0, Color.TRANSPARENT); // Pas de bordure sur les autres côtés
-                        border.setStroke(2, 0xFFFF0000);
-                        edMail.setBackground(border);
+                        edMail.setBackgroundResource(R.drawable.rouge_backround);
                     }
                 }
             }

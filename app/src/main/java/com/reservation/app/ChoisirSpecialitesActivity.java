@@ -4,13 +4,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.List;
 
 public class ChoisirSpecialitesActivity extends AppCompatActivity {
     ImageView btn1, btn2, btn3;
@@ -28,8 +25,11 @@ public class ChoisirSpecialitesActivity extends AppCompatActivity {
 
         SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         String nomP=sharedPreferences.getString("nom","testToto");
+        String prenomP=sharedPreferences.getString("prenom","testToto");
 
-        nomPatient.setText(nomP);
+        // Concaténer le nom et le prénom
+        String nomComplet = nomP + " " + prenomP;
+        nomPatient.setText(nomComplet);
 
         btn1.setOnClickListener(v -> {
             startActivity(new Intent(ChoisirSpecialitesActivity.this, ActivityChoisirMedecin.class));
