@@ -61,7 +61,9 @@
             android:name=".ProfilCoteMedecinActivity"
             android:exported="false" />
         <activity android:name=".ProfilPatientActivity" />
-
+        <activity
+            android:name=".ActivityChoisirMedecin"
+            android:exported="false" />
 
     </application>
 
