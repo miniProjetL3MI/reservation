@@ -26,11 +26,12 @@ public class ChoisirSpecialitesActivity extends AppCompatActivity {
 
         btn2.setOnClickListener(v -> {
             startActivity(new Intent(ChoisirSpecialitesActivity.this, ActivityChoisirMedecin.class));
+
         });
 
         btn3.setOnClickListener(v -> {
             startActivity(new Intent(ChoisirSpecialitesActivity.this, ActivityChoisirMedecin.class));
-        });
 
+        });
     }
 }
