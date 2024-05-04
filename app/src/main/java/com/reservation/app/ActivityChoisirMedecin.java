@@ -16,7 +16,7 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
 
 
         btn1.setOnClickListener(v -> {
-            startActivity(new Intent(ActivityChoisirMedecin.this, ProfilCoteMedecinActivity.class));
+            startActivity(new Intent(ActivityChoisirMedecin.this, ProfilMedecinCotePatient.class));
         });
     }
 }
