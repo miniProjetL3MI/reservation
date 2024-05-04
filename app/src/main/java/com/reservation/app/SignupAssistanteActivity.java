@@ -141,13 +141,14 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                     if (Utils.isValidEmail(edMail.getText().toString())) {
 
                         db.registerassisstante(userName, userPrenom, userMail, userMdp);
-                        //Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupAssistanteActivity.this,FormulaireMedcinActivity.class));
                     } else {
                         edMail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
                         GradientDrawable border = new GradientDrawable();
-                        border.setColor(0xFF756C6C); // Couleur de fond
-                        border.setStroke(2, 0xFF00FF00); // Épaisseur et couleur de la bordure (vert)
+                        border.setColor(0xE8E8F9); // Couleur de fond
+                        border.setStroke(0, 0xFFFF0000); // Aucune bordure sur les côtés gauche, droit et supérieur
+                        border.setStroke(2, 0xFFFF0000);
                         edMail.setBackground(border);
                     }
 
