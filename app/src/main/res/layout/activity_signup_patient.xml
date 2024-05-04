@@ -127,7 +127,7 @@
                 android:drawablePadding="16dp"
                 android:ems="10"
                 android:hint="téléphone"
-                android:inputType="textPersonName"
+                android:inputType="phone"
                 android:textColorHint="#756C6C"
                 android:textSize="18sp" />
 

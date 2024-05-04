@@ -92,23 +92,19 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
                          SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
                          SharedPreferences.Editor editor = sharedPreferences.edit();
-                         editor.putString("nom",username);
+                         editor.putString("email",username);
 
                          editor.apply();
                          startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
                      }else{
 
-
                          if ((db.login1(username, password)==1)){
                              Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
-                             SharedPreferences sharedPreferences =getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+                             SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
                              SharedPreferences.Editor editor = sharedPreferences.edit();
-                             editor.putString("nom",username);
+                             editor.putString("email",username);
                              editor.apply();
                              startActivity(new Intent(LoginActivity.this, ProfilCoteMedecinActivity.class));
-
-                         }else{
-                             Toast.makeText(getApplicationContext(), "il existe aucun compte evec ces information", Toast.LENGTH_SHORT).show();
 
                          }
 
