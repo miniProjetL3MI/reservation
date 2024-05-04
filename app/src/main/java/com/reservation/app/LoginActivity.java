@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         edPassword=findViewById(R.id.editTextTextPasswordName);
         btn=findViewById(R.id.bouttonLogin);
         newUser=findViewById(R.id.newUtilisateur);
-
+        Database db = new Database(getApplicationContext(),"miniprojet",null,1);
         // Ajout de l'écouteur de texte pour edUserName
         edUserName.addTextChangedListener(new TextWatcher() {
             @Override
@@ -85,8 +85,6 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String username=edUserName.getText().toString();
                 String password=edPassword.getText().toString();
-                Database db=new Database(getApplicationContext(), "miniprojet",null,1);
-
                 if(username.length()==0 || password.length()==0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
@@ -94,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
                          SharedPreferences sharedPreferences =getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                          SharedPreferences.Editor editor = sharedPreferences.edit();
-                         editor.putString("email",username);
+                         editor.putString("nom",username);
                          editor.apply();
                          startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
                      }else{

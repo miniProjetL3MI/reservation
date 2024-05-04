@@ -20,7 +20,7 @@ public class Database extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(qry1);
         String qry2 ="create table assisstante(idUtilisateur integer primary key autoincrement,nom text not null,prenom text not null,email text not null unique,motDePasse text not null unique ,idMedecin integer,foreign key (idMedecin) references medecin(idMedecin))";
         sqLiteDatabase.execSQL(qry2);
-        String qry3 = "create table patient(idUtilisateur integer primary key autoincrement,nom text not null ,prenom text not null,email text not null unique,motDePasse text not null unique,datedenaiss text not null)";
+        String qry3 = "create table patient(idUtilisateur integer primary key autoincrement,nom text not null ,prenom text not null,email text not null unique,motDePasse text not null unique,datedenaiss text not null,numTel text not null)";
         sqLiteDatabase.execSQL(qry3);
         String qry4 = "create table admin(idUtilisateur integer primary key autoincrement,nom text not null ,prenom text not null,email text not null unique ,motDePasse text not null unique)";
         sqLiteDatabase.execSQL(qry4);
@@ -42,8 +42,7 @@ public class Database extends SQLiteOpenHelper {
         cv.put("prenom",prenom);
         cv.put("email ",email );
         cv.put("motDePasse",motdepasse);
-        SQLiteDatabase db = getWritableDatabase();
-        db.insert("assisstante",null ,cv);
+        SQLiteDatabase db = getWritableDatabase();db.insert("assisstante",null ,cv);
         db.close();
     }
     public void registermedecin(String nom ,String prenom ,String numTelephone ,String specialite ,String email ,String heurOuverture ,String heurFermeture ,String jourTravail){
@@ -95,10 +94,10 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db4= getWritableDatabase();db4.insert("rendezvous",null ,cv4);
         db4.close();
     }
-    public int login(String email ,String motdepasse){
+    public int login(String nom ,String motdepasse){
         int result=0;
         String str[]=new String[2];
-        str[0]=email;
+        str[0]=nom;
         str[1]=motdepasse;
         SQLiteDatabase db =getWritableDatabase();
         Cursor c= db.rawQuery("select * from patient where email =? and motDePasse =?",str);
