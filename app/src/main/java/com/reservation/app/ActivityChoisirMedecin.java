@@ -10,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ActivityChoisirMedecin extends AppCompatActivity {
     ImageView btn1,btn3;
     TextView btn2 ,btn4;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
