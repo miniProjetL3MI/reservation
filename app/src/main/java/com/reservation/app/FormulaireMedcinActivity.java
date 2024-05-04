@@ -234,7 +234,7 @@ public class FormulaireMedcinActivity extends AppCompatActivity {
                 }else {
                     db.registermedecin(userName, userPrenom, userNumTel, userAdresse , userSpecialite , userHeureOuverture , userHeureFermeture , userJourTravail);
                     Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(FormulaireMedcinActivity.this, ProfilCoteMedecinActivity.class));
+                    startActivity(new Intent(FormulaireMedcinActivity.this,ChoisirSpecialitesActivity.class));
 
                 }
             }
