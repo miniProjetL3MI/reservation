@@ -14,8 +14,8 @@ public class ChoisirSpecialitesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choisir_specialites);
-
         btn1 = findViewById(R.id.imageView4);
+
         btn2 = findViewById(R.id.imageView9);
         btn3 = findViewById(R.id.imageView5);
 
