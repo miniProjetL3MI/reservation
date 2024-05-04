@@ -117,5 +117,4 @@ public class Database extends SQLiteOpenHelper {
             result = 1;
         }
         return result;
-    }
-}
+    }}

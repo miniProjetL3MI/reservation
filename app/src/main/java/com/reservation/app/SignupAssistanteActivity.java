@@ -154,8 +154,6 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                         border.setOrientation(GradientDrawable.Orientation.BOTTOM_TOP);
                         edMail.setBackground(border);
                     }
-
-
                 }
             }
         });
