@@ -1,6 +1,8 @@
 package com.reservation.app;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -187,6 +189,12 @@ public class SignupPatientActivity extends AppCompatActivity {
                     }else {
 
                         db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance,userTel);
+                        SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("nom", userName);
+                        editor.putString("prenom", userPrenom);
+                        editor.apply();
+
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupPatientActivity.this,ChoisirSpecialitesActivity.class));
 
