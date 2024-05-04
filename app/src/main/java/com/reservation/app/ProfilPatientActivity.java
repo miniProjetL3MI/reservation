@@ -20,6 +20,8 @@ public class ProfilPatientActivity extends AppCompatActivity {
         String nom = sharedPreferences.getString("nom", "");
         String prenom = sharedPreferences.getString("prenom", "");
 
+
+
         Log.d("ProfilPatientActivity", "Nom: " + nom + ", Prenom: " + prenom);
 
 
