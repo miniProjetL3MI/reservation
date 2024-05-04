@@ -60,14 +60,16 @@ public class Database extends SQLiteOpenHelper {
         db1.insert("medecin",null ,cv1);
         db1.close();
     }
-    public void registerpatient(String nom ,String prenom ,String email ,String motdepasse ,String datedenaiss){
+    public void registerpatient(String nom ,String prenom ,String email ,String motdepasse ,String datedenaiss,String numTel){
         ContentValues cv2 =new ContentValues();
         cv2.put("nom",nom);
         cv2.put("prenom",prenom);
         cv2.put("email ",email );
         cv2.put("motDePasse",motdepasse);
         cv2.put("datedenaiss",datedenaiss);
-        SQLiteDatabase db2= getWritableDatabase();db2.insert("patient",null ,cv2);
+        cv2.put("numTel",numTel);
+        SQLiteDatabase db2= getWritableDatabase();
+        db2.insert("patient",null ,cv2);
         db2.close();
     }
     public void registeradmin(String nom ,String prenom ,String email ,String motdepasse){
