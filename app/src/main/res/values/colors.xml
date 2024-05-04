@@ -9,5 +9,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="colorHint">#A9A9A9</color>
     <color name="lavender">#8692f7</color>
-    <color name="grey">#ff424242</color><!-- Couleur grise pour le hint -->
+    <color name="grey">#ff424242</color>
+    <color name="colorPrimaryCalendar">#A4B5FD</color>
+    <color name="colorTextCalendar">#FFFFFF</color>
+
 </resources>

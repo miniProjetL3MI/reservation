@@ -45,13 +45,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/white_background"
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteY="186dp"
-        tools:ignore="MissingConstraints">
+        app:layout_constraintTop_toBottomOf="@+id/titleName">
 
 
         <LinearLayout
@@ -349,6 +351,7 @@
         android:text="modifier profil"
         android:textSize="18sp"
         app:cornerRadius="20dp"
+        android:layout_marginTop="-50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/linearLayout"
         app:layout_constraintStart_toStartOf="@id/linearLayout"
