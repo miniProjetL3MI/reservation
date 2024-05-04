@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Database extends SQLiteOpenHelper {
 
     public Database(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
@@ -117,4 +120,11 @@ public class Database extends SQLiteOpenHelper {
             result = 1;
         }
         return result;
-    }}
+    }
+
+
+}
+
+
+
+

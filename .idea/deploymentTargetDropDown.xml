@@ -2,16 +2,26 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="EssaiCalendar">
+      <entry key="ChoisirRendezVousActivity">
         <State />
       </entry>
       <entry key="LoginActivity">
-        <State />
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\remil\.android\avd\Small_Phone_API_33.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-05-01T21:03:35.678930100Z" />
+        </State>
       </entry>
-      <entry key="SignUpActivity">
-        <State />
-      </entry>
-      <entry key="SignupPatientActivity">
+      <entry key="MainActivity">
         <State />
       </entry>
       <entry key="app">
