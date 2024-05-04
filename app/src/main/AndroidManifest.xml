@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:ignore="MissingLeanbackLauncher">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -18,18 +17,20 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
         android:theme="@style/Theme.Reservation"
         tools:targetApi="31">
 
         <activity
-            android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PlaybackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BrowseErrorActivity"
+            android:exported="false" />
         <activity
             android:name=".activities.SignUpActivity"
             android:exported="false" />
@@ -37,27 +38,104 @@
             android:name=".activities.SignInActivity"
             android:exported="false" />
         <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".ValiderMedecin"
-            android:exported="false" />
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ChoisirSpecialitesActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SignupPatientActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SignupAssistanteActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ChoisirRendezVousActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".FormulaireMedcinActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ChoisirTypeActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SignupAssistanteActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Reservation">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
