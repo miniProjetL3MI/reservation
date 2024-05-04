@@ -10,7 +10,7 @@
         android:id="@+id/imageView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -57,45 +57,49 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginEnd="24dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/white_background"
         android:orientation="vertical"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="255dp">
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        tools:ignore="MissingConstraints">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="10dp"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:layout_marginBottom="13dp"
+            android:layout_weight="1"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewname"
-                android:layout_width="70dp"
+                android:id="@+id/textViewDate"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="9dp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Date"
                 android:textColor="@color/lavender"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextTextDate"
-                android:layout_width="wrap_content"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/top_button_background2"
-                android:textAlignment="viewEnd"
+                android:gravity="center"
                 android:textColor="@color/grey"
-                android:textSize="18sp"
-                android:inputType="date"/>
+                android:textSize="20sp"
+                android:clickable="true"
+                android:focusable="false" />
 
         </LinearLayout>
 
@@ -110,31 +114,35 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:orientation="horizontal"
-            android:padding="8dp">
+            android:layout_marginBottom="13dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textViewtelephoneMod"
-                android:layout_width="70dp"
+                android:id="@+id/textViewHeure"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="9dp"
                 android:layout_weight="1"
+                android:gravity="center"
                 android:text="Heure"
                 android:textColor="@color/lavender"
-                android:textSize="18sp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/editTextTextHeure"
-                android:layout_width="wrap_content"
+                android:layout_width="240dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/top_button_background2"
-                android:textAlignment="viewEnd"
+                android:gravity="center"
                 android:textColor="@color/grey"
-                android:textSize="18sp"
-                android:inputType="time" />
-
+                android:textSize="20sp"
+                android:clickable="true"
+                android:focusable="false" />
         </LinearLayout>
 
     </LinearLayout>

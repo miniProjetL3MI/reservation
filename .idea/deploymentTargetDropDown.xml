@@ -18,13 +18,13 @@
           <timeTargetWasSelectedWithDropDown value="2024-05-01T21:03:35.678930100Z" />
         </State>
       </entry>
-      <entry key="RormulaireMedcinActivity">
-        <State />
-      </entry>
       <entry key="SignupAssistanteActivity">
         <State />
       </entry>
       <entry key="SignupPatientActivity">
+        <State />
+      </entry>
+      <entry key="ValiderMedecin">
         <State />
       </entry>
       <entry key="app">
