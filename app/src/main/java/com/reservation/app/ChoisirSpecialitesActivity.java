@@ -19,6 +19,7 @@ public class ChoisirSpecialitesActivity extends AppCompatActivity {
         btn2 = findViewById(R.id.imageView9);
         btn3 = findViewById(R.id.imageView5);
 
+
         btn1.setOnClickListener(v -> {
             startActivity(new Intent(ChoisirSpecialitesActivity.this, Medecin.class));
         });
