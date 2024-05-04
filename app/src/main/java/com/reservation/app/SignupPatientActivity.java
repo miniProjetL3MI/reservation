@@ -185,6 +185,7 @@ public class SignupPatientActivity extends AppCompatActivity {
                             userTel.length() == 0){
                         Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                     }else {
+
                         db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance,userTel);
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupPatientActivity.this,ChoisirSpecialitesActivity.class));
@@ -195,7 +196,7 @@ public class SignupPatientActivity extends AppCompatActivity {
         btnreturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignupPatientActivity.this, ChoisirTypeActivity.class));
+                startActivity(new Intent(SignupPatientActivity.this, LoginActivity.class));
             }
         });
 
