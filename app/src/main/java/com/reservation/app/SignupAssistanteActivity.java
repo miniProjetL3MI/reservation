@@ -149,9 +149,7 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                         GradientDrawable border = new GradientDrawable();
                         border.setColor(0xE8E8F9); // Couleur de fond
                         border.setStroke(0, Color.TRANSPARENT); // Pas de bordure sur les autres côtés
-                        border.setStroke(2, 0xFFFF0000); // Bordure de 2 pixels uniquement sur le côté bas (rouge)
-                        border.setGradientType(GradientDrawable.LINEAR_GRADIENT);
-                        border.setOrientation(GradientDrawable.Orientation.BOTTOM_TOP);
+                        border.setStroke(2, 0xFFFF0000);
                         edMail.setBackground(border);
                     }
 
