@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -198,6 +197,7 @@ public class SignupPatientActivity extends AppCompatActivity {
 
 
                         editor.apply();
+
 
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupPatientActivity.this, ChoisirSpecialitesActivity.class));

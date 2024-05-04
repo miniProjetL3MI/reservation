@@ -100,6 +100,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
                     } else {
 
+
                         Toast.makeText(getApplicationContext(), "Aucun compte correspondant trouvé", Toast.LENGTH_SHORT).show();
                     }
                 }

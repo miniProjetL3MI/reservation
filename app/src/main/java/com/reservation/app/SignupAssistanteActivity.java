@@ -3,8 +3,6 @@ package com.reservation.app;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -135,6 +133,7 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                 String userMail=edMail.getText().toString();
                 String userMdp=edMdp.getText().toString();
                 Database db = new Database(getApplicationContext(),"miniprojet",null,1);
+
 
 
 
