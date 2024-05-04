@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(username.length()==0 || password.length()==0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
-                     if(db.login(username, password)==1 || (db.login1(username, password)==1)){
+                     if(db.login(username, password)==1 ){
                         Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
                          SharedPreferences sharedPreferences =getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                          SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -96,7 +96,18 @@ public class LoginActivity extends AppCompatActivity {
                          editor.apply();
                          startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
                      }else{
-                         Toast.makeText(getApplicationContext(), "il existe aucun compte evec ces information", Toast.LENGTH_SHORT).show();
+                         if ((db.login1(username, password)==1)){
+                             Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
+                             SharedPreferences sharedPreferences =getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
+                             SharedPreferences.Editor editor = sharedPreferences.edit();
+                             editor.putString("nom",username);
+                             editor.apply();
+                             startActivity(new Intent(LoginActivity.this, ProfilCoteMedecinActivity.class));
+
+                         }else{
+                             Toast.makeText(getApplicationContext(), "il existe aucun compte evec ces information", Toast.LENGTH_SHORT).show();
+
+                         }
 
                      }
                 }
