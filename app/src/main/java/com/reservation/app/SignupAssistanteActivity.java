@@ -8,13 +8,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.util.Patterns;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+import android.graphics.drawable.GradientDrawable;
 
 public class SignupAssistanteActivity  extends AppCompatActivity {
     EditText edNom,edPrenom,edMail,edMdp;
     ImageView btnSignUp,btnReturn;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,6 +96,7 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                 } else {
                     // Si le texte n'est pas vide, afficher le texte en noir
                     edMail.setTextColor(getResources().getColor(android.R.color.black)); // Couleur noire par défaut d'Android
+
                 }
             }
         });
@@ -115,6 +120,7 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                 } else {
                     // Si le texte n'est pas vide, afficher le texte en noir
                     edMdp.setTextColor(getResources().getColor(android.R.color.black)); // Couleur noire par défaut d'Android
+
                 }
             }
         });
@@ -132,9 +138,19 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                 if(userName.length() == 0|| userPrenom.length() == 0 || userMail.length() == 0 || userMdp.length() == 0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
-                    db.registerassisstante(userName, userPrenom, userMail, userMdp);
-                    Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(SignupAssistanteActivity.this,ChoisirSpecialitesActivity.class));
+                    if (Utils.isValidEmail(edMail.getText().toString())) {
+
+                        db.registerassisstante(userName, userPrenom, userMail, userMdp);
+                        //Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(SignupAssistanteActivity.this,FormulaireMedcinActivity.class));
+                    } else {
+                        edMail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                        GradientDrawable border = new GradientDrawable();
+                        border.setColor(0xFF756C6C); // Couleur de fond
+                        border.setStroke(2, 0xFF00FF00); // Épaisseur et couleur de la bordure (vert)
+                        edMail.setBackground(border);
+                    }
+
 
                 }
             }
@@ -142,10 +158,19 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
         btnReturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignupAssistanteActivity.this, LoginActivity.class));
+                startActivity(new Intent(SignupAssistanteActivity.this, ChoisirTypeActivity.class));
             }
         });
 
+
+
     }
+    public static class Utils {
+
+        public static boolean isValidEmail(CharSequence target) {
+            return (target != null && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+        }
+    }
+
 }
 

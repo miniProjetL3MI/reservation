@@ -195,7 +195,7 @@ public class SignupPatientActivity extends AppCompatActivity {
         btnreturn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(SignupPatientActivity.this, LoginActivity.class));
+                startActivity(new Intent(SignupPatientActivity.this, ChoisirTypeActivity.class));
             }
         });
 

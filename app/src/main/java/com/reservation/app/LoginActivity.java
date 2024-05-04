@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
                          editor.apply();
                          startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
                      }else{
-                         Toast.makeText(getApplicationContext(), "hello", Toast.LENGTH_SHORT).show();
+                         Toast.makeText(getApplicationContext(), "il existe aucun compte evec ces information", Toast.LENGTH_SHORT).show();
 
                      }
                 }
@@ -108,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(LoginActivity.this,SignupPatientActivity.class));
+                startActivity(new Intent(LoginActivity.this,ChoisirTypeActivity.class));
 
 
             }
