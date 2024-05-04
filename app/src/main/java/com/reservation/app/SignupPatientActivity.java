@@ -183,25 +183,23 @@ public class SignupPatientActivity extends AppCompatActivity {
 
 
 
-                    if(userName.length() == 0|| userPrenom.length() == 0 || userMail.length() == 0 || userMdp.length() == 0 || userNaissance.length() == 0 ||
-                            userTel.length() == 0){
-                        Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
-                    }else {
-
-                        db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance,userTel);
+                    if (userName.length() == 0 || userPrenom.length() == 0 || userMail.length() == 0 || userMdp.length() == 0 || userNaissance.length() == 0 || userTel.length() == 0) {
+                        Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plaît", Toast.LENGTH_SHORT).show();
+                    } else {
+                        db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance, userTel);
                         SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("email", userMail);
+                        editor.putString("motdepasse", userMdp);
                         editor.putString("nom", userName);
                         editor.putString("prenom", userPrenom);
-                        editor.putString("email",userMail);
-
-
                         editor.apply();
 
-                        Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SignupPatientActivity.this,ChoisirSpecialitesActivity.class));
 
+                        Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(SignupPatientActivity.this, ChoisirSpecialitesActivity.class));
                     }
+
                 }
             });
         btnreturn.setOnClickListener(new View.OnClickListener() {
