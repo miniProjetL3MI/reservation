@@ -94,15 +94,28 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db4= getWritableDatabase();db4.insert("rendezvous",null ,cv4);
         db4.close();
     }
-    public int login(String nom ,String motdepasse){
-        int result=0;
-        String str[]=new String[2];
-        str[0]=nom;
-        str[1]=motdepasse;
-        SQLiteDatabase db =getWritableDatabase();
-        Cursor c= db.rawQuery("select * from patient where email =? and motDePasse =?",str);
-        if(c.moveToFirst()){
-            result=1;
+    public int login(String email ,String motdepasse) {
+        int result = 0;
+        String str[] = new String[2];
+        str[0] = email;
+        str[1] = motdepasse;
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor c = db.rawQuery("select * from patient where email =? and motDePasse =?", str);
+        if (c.moveToFirst()) {
+            result = 1;
         }
         return result;
-    }}
+    }
+    public int login1(String email ,String motdepasse) {
+        int result = 0;
+        String str[] = new String[2];
+        str[0] = email;
+        str[1] = motdepasse;
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor c = db.rawQuery("select * from assisstante where email =? and motDePasse =?", str);
+        if (c.moveToFirst()) {
+            result = 1;
+        }
+        return result;
+    }
+}

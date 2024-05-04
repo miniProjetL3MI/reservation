@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(username.length()==0 || password.length()==0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
-                     if(db.login(username, password)==1) {
+                     if(db.login(username, password)==1 || (db.login1(username, password)==1)) {
                         Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
                          SharedPreferences sharedPreferences =getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                          SharedPreferences.Editor editor = sharedPreferences.edit();
