@@ -6,173 +6,97 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <!-- Vue principale (par exemple, une liste de commentaires) -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <!-- Médecin 1 -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="100dp"
-                android:layout_marginEnd="14dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_margin="8dp">
 
+                <!-- Image du médecin -->
                 <ImageView
                     android:id="@+id/imageViewA"
-                    android:layout_width="63dp"
-                    android:layout_height="59dp"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
                     android:layout_margin="7dp"
                     app:srcCompat="@drawable/profile2" />
 
+                <!-- Informations sur le médecin -->
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/top_button_background"
-                    android:orientation="horizontal">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="6dp"
-                            android:text="Abbi Johnson"
-                            android:textSize="19dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="15dp"
-                            android:text="Mon commentaire"
-                            android:textSize="17dp" />
-
-                    </LinearLayout>
-
-                    <RatingBar
-                        android:id="@+id/ratingBar2"
-                        style="?android:attr/ratingBarStyleSmall"
+                    <TextView
+                        android:id="@+id/textViewA"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:numStars="5"
-                        android:progressTint="@color/orange"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"
-                        android:secondaryProgressTint="@color/orange" />
+                        android:layout_marginStart="10dp"
+                        android:text="Abbi Johnson"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewAA"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="abbi.johnson@gmail.com" />
 
                 </LinearLayout>
-
-
             </LinearLayout>
 
+            <!-- Médecin 2 (similaire au premier) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="14dp"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_margin="8dp">
 
+                <!-- Image du médecin -->
                 <ImageView
                     android:id="@+id/imageView4"
-                    android:layout_width="63dp"
-                    android:layout_height="59dp"
+                    android:layout_width="58dp"
+                    android:layout_height="58dp"
                     android:layout_margin="7dp"
-                    app:srcCompat="@drawable/profile" />
+                    app:srcCompat="@drawable/profile2" />
 
+                <!-- Informations sur le médecin -->
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/top_button_background"
-                    android:orientation="horizontal">
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textViewB"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="10dp"
-                            android:layout_marginTop="6dp"
-                            android:text="Abbi Johnson"
-                            android:textSize="19dp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="16dp"
-                            android:layout_marginEnd="15dp"
-                            android:text="Mon commentaire"
-                            android:textSize="17dp" />
-
-                    </LinearLayout>
-
-                    <RatingBar
-                        android:id="@+id/ratingBar3"
-                        style="?android:attr/ratingBarStyleSmall"
+                    <TextView
+                        android:id="@+id/textView15"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:numStars="5"
-                        android:progressTint="@color/orange"
-                        android:scaleX="1.2"
-                        android:scaleY="1.2"
-                        android:secondaryProgressTint="@color/orange" />
+                        android:layout_marginStart="10dp"
+                        android:text="Lion Fischer"
+                        android:textSize="19dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="lion.fischer@gmial.com" />
+
                 </LinearLayout>
-
-
             </LinearLayout>
 
-
+            <!-- Ajoute d'autres médecins ici si nécessaire -->
         </LinearLayout>
     </ScrollView>
 
-    <!-- Barre de saisie de texte -->
-    <LinearLayout
-        android:id="@+id/commentLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_margin="8dp"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <EditText
-            android:id="@+id/commentEditText"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:hint="Ajouter un commentaire..."
-            android:inputType="textMultiLine"
-            android:maxLines="3" />
-
-        <Button
-            android:id="@+id/sendButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Envoyer" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
