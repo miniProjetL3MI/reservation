@@ -186,7 +186,8 @@ public class SignupPatientActivity extends AppCompatActivity {
                         userTel.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (SignupAssistanteActivity.Utils.isValidEmail(edMail.getText().toString()) && SignupPatientActivity.Utils.isValidTel(userTel) && SignupPatientActivity.Utils.isValidDate(userNaissance)) {
+                    if (SignupAssistanteActivity.Utils.isValidEmail(edMail.getText().toString()) && SignupPatientActivity.Utils.isValidTel(userTel) && SignupPatientActivity.Utils.isValidDate(userNaissance)
+                    && SignupAssistanteActivity.Utils.isValidMDP(userMdp)) {
 
                         db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance, userTel);
 
@@ -223,6 +224,12 @@ public class SignupPatientActivity extends AppCompatActivity {
                             edDateNaissance.setBackgroundResource(R.drawable.rouge_backround);
                         } else {
                             edDateNaissance.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                        if (!SignupAssistanteActivity.Utils.isValidMDP(userMdp)) {
+                            edMdp.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edMdp.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edMdp.setBackgroundResource(R.drawable.edittext_background);
                         }
                     }
 

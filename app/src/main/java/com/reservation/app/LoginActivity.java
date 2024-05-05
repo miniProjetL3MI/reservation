@@ -88,26 +88,40 @@ public class LoginActivity extends AppCompatActivity {
                 if(username.length()==0 || password.length()==0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
-                     if(db.login(username, password)==1 ){
-                        Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
-                         SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
-                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                         editor.putString("email",username);
-                         editor.apply();
-                         startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
-                     }else{
+                    if (SignupAssistanteActivity.Utils.isValidEmail(username) && SignupAssistanteActivity.Utils.isValidMDP(password) ){
+                        if(db.login(username, password)==1 ){
+                            Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
+                            SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            editor.putString("email",username);
+                            editor.apply();
+                            startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
+                        }else{
 
-                         if ((db.login1(username, password)==1)){
-                             Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
-                             SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
-                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                             editor.putString("email",username);
-                             editor.apply();
-                             startActivity(new Intent(LoginActivity.this, ProfilCoteMedecinActivity.class));
+                            if ((db.login1(username, password)==1)){
+                                Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
+                                SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("email",username);
+                                editor.apply();
+                                startActivity(new Intent(LoginActivity.this, ProfilCoteMedecinActivity.class));
 
-                         }
-
+                            }
                      }
+                    }else {
+                        if (!SignupAssistanteActivity.Utils.isValidEmail(username)) {
+                            edUserName.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edUserName.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edUserName.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                        if (!SignupAssistanteActivity.Utils.isValidMDP(password)) {
+                            edPassword.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edPassword.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edPassword.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                    }
                 }
 
             }
