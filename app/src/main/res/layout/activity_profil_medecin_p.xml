@@ -88,7 +88,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/imageView22"
                     app:layout_constraintVertical_bias="0.53"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="40dp"
                     android:layout_marginEnd="40dp"
@@ -96,8 +96,8 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:layout_margin="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/purple_top_buttons"
@@ -105,14 +105,14 @@
 
                         <ImageView
                             android:id="@+id/imageView5"
-                            app:srcCompat="@drawable/rendezvouss"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_margin="10dp" />
+                            android:layout_margin="5dp"
+                            app:srcCompat="@drawable/rendezvouss" />
 
                         <TextView
                             android:id="@+id/textView5"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:text="Rendez-vous"
@@ -122,34 +122,8 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="7dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/purple_top_buttons"
-                        android:orientation="vertical">
-
-                        <ImageView
-                            android:id="@+id/imageView6"
-                            app:srcCompat="@drawable/notifff"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp" />
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="8dp"
-                            android:text="Notification"
-                            android:textAlignment="center"
-                            android:textColor="#7182ef"
-                            android:textStyle="bold" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
                         android:layout_margin="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/purple_top_buttons"
@@ -158,13 +132,13 @@
                         <ImageView
                             android:id="@+id/imageView7"
                             app:srcCompat="@drawable/etoile1"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_margin="7dp" />
 
                         <TextView
                             android:id="@+id/textView7"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
                             android:text="Évaluations"
