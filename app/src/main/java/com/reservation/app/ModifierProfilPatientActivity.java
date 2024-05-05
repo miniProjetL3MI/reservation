@@ -52,6 +52,9 @@ public class ModifierProfilPatientActivity extends AppCompatActivity {
 
                 }
 
+
+
+
                 // Mettre à jour les valeurs dans SharedPreferences
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("nom", userName);

@@ -95,6 +95,8 @@ public class Database extends SQLiteOpenHelper {
         db4.close();
 
     }
+
+
     public int login(String email ,String motdepasse) {
         int result = 0;
         String str[] = new String[2];
