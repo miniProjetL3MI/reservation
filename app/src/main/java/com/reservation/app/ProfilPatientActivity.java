@@ -15,6 +15,7 @@ public class ProfilPatientActivity extends AppCompatActivity {
     TextView nomPatient, email;
     Button buttonModifierProfil;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -93,6 +93,7 @@ public class Database extends SQLiteOpenHelper {
         cv4.put("daterendezvous",daterendezvous);
         SQLiteDatabase db4= getWritableDatabase();db4.insert("rendezvous",null ,cv4);
         db4.close();
+
     }
     public int login(String email ,String motdepasse) {
         int result = 0;

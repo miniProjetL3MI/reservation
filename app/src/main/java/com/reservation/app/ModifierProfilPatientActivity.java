@@ -49,6 +49,7 @@ public class ModifierProfilPatientActivity extends AppCompatActivity {
                     Intent intent = new Intent(ModifierProfilPatientActivity.this, ProfilPatientActivity.class);
                     startActivity(intent);
                     return;
+
                 }
 
                 // Mettre à jour les valeurs dans SharedPreferences
