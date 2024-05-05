@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfilCoteMedecinActivity extends AppCompatActivity {
     ImageView boutonRendezVous,boutonNotif,boutonEvaluation,boutonModification;
-    TextView tnom,tprenom,tmail,tAdresse,tnumTel,tSpecialite,tJourTravail,tHouverture,tHfermeture;
+    TextView tnom,tmail,tAdresse,tnumTel,tSpecialite,tJourTravail,tHouverture,tHfermeture;
 
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -37,7 +37,7 @@ public class ProfilCoteMedecinActivity extends AppCompatActivity {
         tnom.setText(nomComplet);
 
         SharedPreferences sharedPreference = getSharedPreferences("shared_prefss", Context.MODE_PRIVATE);
-        String email=sharedPreferences.getString("email","testToto");
+        String email=sharedPreference.getString("email","testToto");
         tmail.setText(email);
 
 
@@ -45,27 +45,27 @@ public class ProfilCoteMedecinActivity extends AppCompatActivity {
 
 
         SharedPreferences sharedPreferences0 = getSharedPreferences("shared_prefsss", Context.MODE_PRIVATE);
-        String adresse=sharedPreferences.getString("adresse","testToto");
+        String adresse=sharedPreferences0.getString("adresse","testToto");
        tAdresse.setText(adresse);
 
         SharedPreferences sharedPreferences1 = getSharedPreferences("shared_prefsss", Context.MODE_PRIVATE);
-        String num=sharedPreferences.getString("numTel","testToto");
+        String num=sharedPreferences1.getString("numTel","testToto");
         tnumTel.setText(num);
 
         SharedPreferences sharedPreferences2 = getSharedPreferences("shared_prefsss", Context.MODE_PRIVATE);
-        String specialite=sharedPreferences.getString("specialite","testToto");
+        String specialite=sharedPreferences2.getString("specialite","testToto");
         tSpecialite.setText(specialite);
 
         SharedPreferences sharedPreferences3 = getSharedPreferences("shared_prefsss", Context.MODE_PRIVATE);
-        String jTravail=sharedPreferences.getString("jourTravail","testToto");
+        String jTravail=sharedPreferences3.getString("jourTravail","testToto");
         tJourTravail.setText(jTravail);
 
         SharedPreferences sharedPreferences4 = getSharedPreferences("shared_prefsss", Context.MODE_PRIVATE);
-        String ouvert=sharedPreferences.getString("heurOuverture","testToto");
+        String ouvert=sharedPreferences4.getString("heurOuverture","testToto");
         tHouverture.setText(ouvert);
 
         SharedPreferences sharedPreferences5 = getSharedPreferences("shared_prefsss", Context.MODE_PRIVATE);
-        String fermer=sharedPreferences.getString("heurFermeture","testToto");
+        String fermer=sharedPreferences5.getString("heurFermeture","testToto");
         tHfermeture.setText(fermer);
 
 
