@@ -117,4 +117,17 @@ public class Database extends SQLiteOpenHelper {
             result = 1;
         }
         return result;
+    }
+    public int MedecinListe(String email ,String motdepasse) {
+        int result = 0;
+        String str[] = new String[2];
+        str[0] = email;
+        str[1] = motdepasse;
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor c = db.rawQuery("select * from assisstante where email =? and motDePasse =?", str);
+        if (c.moveToFirst()) {
+            result = 1;
+        }
+        return result;
     }}
+
