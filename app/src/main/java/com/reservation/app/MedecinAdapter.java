@@ -7,11 +7,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
-public class MedecinAdapter extends ArrayAdapter<Medecin> {
+public class MedecinAdapter extends ArrayAdapter<MedecinAm> {
     private Context context;
     private int resource;
 
-    public MedecinAdapter(Context context, int resource, List<Medecin> medecins) {
+    public MedecinAdapter(Context context, int resource, List<MedecinAm> medecins) {
         super(context, resource, medecins);
         this.context = context;
         this.resource = resource;
@@ -19,23 +19,23 @@ public class MedecinAdapter extends ArrayAdapter<Medecin> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        // Vérifie si une vue recyclée est disponible, sinon inflates une nouvelle vue
         if (convertView == null) {
-            convertView = LayoutInflater.from(context).inflate(resource, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.medecin_item, parent, false);
         }
 
-        ImageView imageViewMedecin = convertView.findViewById(R.id.imageViewMedecin);
+        // Récupère le médecin à la position donnée
+        MedecinAm medecin = getItem(position);
+
+        // Récupère les éléments de la mise en page XML
         TextView textViewNomMedecin = convertView.findViewById(R.id.textViewNomMedecin);
         TextView textViewEmailMedecin = convertView.findViewById(R.id.textViewEmailMedecin);
 
-        Medecin medecin = getItem(position);
+        // Définit les données du médecin sur les éléments de la mise en page XML
+        textViewNomMedecin.setText(medecin.getNom());
+        textViewEmailMedecin.setText(medecin.getEmail());
 
-        if (medecin != null) {
-            // Set data to views
-            imageViewMedecin.setImageResource(R.drawable.profile2);
-            textViewNomMedecin.setText(medecin.getNomMedecin());
-            textViewEmailMedecin.setText(medecin.getEmailMedecin());
-        }
-
+        // Renvoie la vue mise à jour
         return convertView;
     }
 }

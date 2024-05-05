@@ -30,10 +30,10 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
         medecinListView = findViewById(R.id.medecinListView);
 
         // Crée une liste de médecins (tu devras remplacer ceci par ta propre logique de récupération des médecins)
-        List<Medecin> medecins = new ArrayList<>();
-        medecins.add(new Medecin("Dr. Smith", "email1@example.com"));
-        medecins.add(new Medecin("Dr. Johnson", "email2@example.com"));
-        medecins.add(new Medecin("Dr. Brown", "email3@example.com"));
+        List<MedecinAm> medecins = new ArrayList<>();
+        medecins.add(new MedecinAm("Dr. Smith", "email1@example.com"));
+        medecins.add(new MedecinAm("Dr. Johnson", "email2@example.com"));
+        medecins.add(new MedecinAm("Dr. Brown", "email3@example.com"));
 
         // Crée une instance de l'adaptateur personnalisé et l'associe à la ListView
         MedecinAdapter adapter = new MedecinAdapter(this, R.layout.medecin_item, medecins);
@@ -44,8 +44,8 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // Logique à exécuter lorsqu'un élément de la liste est cliqué
-                Medecin medecinSelectionne = medecins.get(position);
-                Toast.makeText(ActivityChoisirMedecin.this, "Médecin sélectionné : " + medecinSelectionne.getNomMedecin(), Toast.LENGTH_SHORT).show();
+                MedecinAm medecinSelectionne = medecins.get(position);
+                Toast.makeText(ActivityChoisirMedecin.this, "Médecin sélectionné : " + medecinSelectionne.getNom(), Toast.LENGTH_SHORT).show();
             }
         });
 
