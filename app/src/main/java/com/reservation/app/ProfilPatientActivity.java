@@ -40,6 +40,17 @@ public class ProfilPatientActivity extends AppCompatActivity {
                 Intent intent = new Intent(ProfilPatientActivity.this, ModifierProfilPatientActivity.class);
                 startActivity(intent);
             }
+
         });
+        Button backButton = findViewById(R.id.backButton);
+
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ProfilPatientActivity.this,ChoisirSpecialitesActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

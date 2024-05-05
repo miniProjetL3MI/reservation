@@ -46,8 +46,7 @@ public class ModifierProfilPatientActivity extends AppCompatActivity {
 
                 if (userName.isEmpty() || userPrenom.isEmpty() || userNaissance.isEmpty()) {
                     // Les champs sont vides, ne rien faire
-
-                    Intent intent = new Intent( ModifierProfilPatientActivity.this, ProfilPatientActivity.class);
+                    Intent intent = new Intent(ModifierProfilPatientActivity.this, ProfilPatientActivity.class);
                     startActivity(intent);
                     return;
                 }
@@ -66,10 +65,11 @@ public class ModifierProfilPatientActivity extends AppCompatActivity {
 
                 // Afficher un message de succès ou rediriger l'utilisateur
                 Toast.makeText(ModifierProfilPatientActivity.this, "Profil mis à jour avec succès", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent( ModifierProfilPatientActivity.this, ProfilPatientActivity.class);
+                Intent intent = new Intent(ModifierProfilPatientActivity.this, ProfilPatientActivity.class);
                 startActivity(intent);
             }
         });
 
     }
 }
+
