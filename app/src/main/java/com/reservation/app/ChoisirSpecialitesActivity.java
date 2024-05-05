@@ -9,11 +9,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 
 public class ChoisirSpecialitesActivity extends AppCompatActivity {
 
-    TextView nomPatient;
+    TextView nomPatient ;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +29,24 @@ public class ChoisirSpecialitesActivity extends AppCompatActivity {
         // Concaténer le nom et le prénom
         String nomComplet = nomP + " " + prenomP;
         nomPatient.setText(nomComplet);
-
+        ImageView profil =findViewById(R.id.imageView);
         ImageView cardio =findViewById(R.id.imageView4);
+        profil.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it=new Intent(ChoisirSpecialitesActivity.this,ProfilPatientActivity.class);
+                startActivity(it);
+            }
+        });
+
+        nomPatient.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent it=new Intent(ChoisirSpecialitesActivity.this,ProfilPatientActivity.class);
+                startActivity(it);
+            }
+        });
+
         cardio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
