@@ -8,21 +8,11 @@
       <entry key="EvaluerActivity">
         <State />
       </entry>
-      <entry key="LoginActivity">
-        <State>
-          <targetSelectedWithDropDown>
-            <Target>
-              <type value="QUICK_BOOT_TARGET" />
-              <deviceKey>
-                <Key>
-                  <type value="VIRTUAL_DEVICE_PATH" />
-                  <value value="C:\Users\remil\.android\avd\Pixel_4_XL_API_34.avd" />
-                </Key>
-              </deviceKey>
-            </Target>
-          </targetSelectedWithDropDown>
-          <timeTargetWasSelectedWithDropDown value="2024-05-04T21:07:15.892450700Z" />
-        </State>
+      <entry key="ModifierProfilPatientActivity">
+        <State />
+      </entry>
+      <entry key="ProfilCoteMedecinActivity">
+        <State />
       </entry>
       <entry key="app">
         <State />
