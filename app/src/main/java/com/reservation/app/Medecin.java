@@ -96,7 +96,7 @@ public class Medecin implements Parcelable{
         jourTravail=in.readString();
 
     }
-    public Medecin(){
+    public Medecin(String abbiJohnson, String mail){
 
     }
 

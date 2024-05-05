@@ -117,17 +117,4 @@ public class Database extends SQLiteOpenHelper {
             result = 1;
         }
         return result;
-    }
-    public void updatePatient(String nom, String prenom, String email, String datedenaiss, String numTel) {
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put("nom", nom);
-        values.put("prenom", prenom);
-        values.put("datedenaiss", datedenaiss);
-        values.put("numTel", numTel);
-
-        db.update("patient", values, "email=?", new String[]{email});
-        db.close();
-    }
-
-}
+    }}
