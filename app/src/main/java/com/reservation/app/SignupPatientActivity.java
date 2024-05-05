@@ -189,14 +189,18 @@ public class SignupPatientActivity extends AppCompatActivity {
                     if (SignupAssistanteActivity.Utils.isValidEmail(edMail.getText().toString()) && SignupPatientActivity.Utils.isValidTel(userTel) && SignupPatientActivity.Utils.isValidDate(userNaissance)) {
 
                         db.registerpatient(userName, userPrenom, userMail, userMdp, userNaissance, userTel);
+
                         SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPreferences.edit();
                         editor.putString("nom", userName);
                         editor.putString("prenom", userPrenom);
                         editor.putString("email", userMail);
-
-
+                        editor.putString("datedenaiss", userNaissance);
+                        editor.putString("numTel", userTel);
+                        editor.putString("motdepasse", userMdp);
                         editor.apply();
+
+
 
 
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();

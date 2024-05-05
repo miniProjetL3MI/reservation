@@ -93,7 +93,10 @@ public class Database extends SQLiteOpenHelper {
         cv4.put("daterendezvous",daterendezvous);
         SQLiteDatabase db4= getWritableDatabase();db4.insert("rendezvous",null ,cv4);
         db4.close();
+
     }
+
+
     public int login(String email ,String motdepasse) {
         int result = 0;
         String str[] = new String[2];
@@ -118,16 +121,15 @@ public class Database extends SQLiteOpenHelper {
         }
         return result;
     }
-    public int MedecinListe(String email ,String motdepasse) {
-        int result = 0;
-        String str[] = new String[2];
-        str[0] = email;
-        str[1] = motdepasse;
-        SQLiteDatabase db = getWritableDatabase();
-        Cursor c = db.rawQuery("select * from assisstante where email =? and motDePasse =?", str);
-        if (c.moveToFirst()) {
-            result = 1;
-        }
-        return result;
-    }}
+    public void updatePatient(String nom, String prenom, String email, String datedenaiss, String numTel) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("nom", nom);
+        values.put("prenom", prenom);
+        values.put("datedenaiss", datedenaiss);
+        values.put("numTel", numTel);
 
+        db.update("patient", values, "email=?", new String[]{email});
+        db.close();
+    }
+}

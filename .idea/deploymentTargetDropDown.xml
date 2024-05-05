@@ -5,7 +5,7 @@
       <entry key="ActivityChoisirMedecin">
         <State />
       </entry>
-      <entry key="EvaluerActivity">
+      <entry key="ChoisirSpecialitesActivity">
         <State />
       </entry>
       <entry key="LoginActivity">
@@ -23,6 +23,12 @@
           </targetSelectedWithDropDown>
           <timeTargetWasSelectedWithDropDown value="2024-05-04T21:07:15.892450700Z" />
         </State>
+      </entry>
+      <entry key="ModifierProfilPatientActivity">
+        <State />
+      </entry>
+      <entry key="ProfilPatientActivity">
+        <State />
       </entry>
       <entry key="app">
         <State />
