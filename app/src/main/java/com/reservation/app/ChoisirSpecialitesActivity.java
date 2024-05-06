@@ -19,8 +19,6 @@ public class ChoisirSpecialitesActivity extends AppCompatActivity {
     ImageView profileImageView;
 
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

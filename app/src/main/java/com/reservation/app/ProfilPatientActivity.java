@@ -16,8 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfilPatientActivity extends AppCompatActivity {
 
-
-
     TextView nomPatient, email;
     Button buttonModifierProfil;
     ImageView profileImageView;
