@@ -5,6 +5,9 @@
       <entry key="ActivityChoisirMedecin">
         <State />
       </entry>
+      <entry key="ChoisirSpecialitesActivity">
+        <State />
+      </entry>
       <entry key="LoginActivity">
         <State />
       </entry>

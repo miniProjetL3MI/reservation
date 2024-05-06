@@ -23,6 +23,7 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
     TextView tv,nomPatient;
     ListView medecinListView;
     ImageView profileImageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,7 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
 
         // Récupère la référence de la ListView
         medecinListView = findViewById(R.id.medecinListView);
+        profileImageView = findViewById(R.id.imageView3);
 
         // Crée une liste de médecins (tu devras remplacer ceci par ta propre logique de récupération des médecins)
         List<MedecinAm> medecins = new ArrayList<>();
@@ -57,8 +59,6 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
         tv.setText(title);
         nomPatient=findViewById(R.id.textView4);
         nomPatient=findViewById(R.id.textView4);
-        profileImageView = findViewById(R.id.imageView3);
-
         ImageView profil =findViewById(R.id.imageView);
         SharedPreferences sharedPreferences = getSharedPreferences("shared_prefs", Context.MODE_PRIVATE);
         String nomP=sharedPreferences.getString("nom","testToto");

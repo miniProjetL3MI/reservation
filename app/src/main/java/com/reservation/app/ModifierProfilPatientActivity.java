@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
@@ -31,6 +32,7 @@ public class ModifierProfilPatientActivity extends AppCompatActivity {
     TextView nomPatient, prenomPatient, dateNai, NumTel;
     Button buttonModifierProfil;
     ImageView profileImg;
+
     TextView titleName;
     private static final int IMAGE_PICK_CODE = 1000;
 
@@ -55,7 +57,13 @@ public class ModifierProfilPatientActivity extends AppCompatActivity {
         prenomPatient.setText(sharedPreferences.getString("prenom", ""));
         dateNai.setText(sharedPreferences.getString("datedenaiss", ""));
         NumTel.setText(sharedPreferences.getString("numTel", ""));
-
+        String profileImageBase64 = sharedPreferences.getString("profile_image", "");
+        // Afficher l'image de profil
+        if (!profileImageBase64.isEmpty()) {
+            byte[] decodedString = Base64.decode(profileImageBase64, Base64.DEFAULT);
+            Bitmap decodedByte = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            profileImg.setImageBitmap(decodedByte);
+        }
         // Ajouter un OnClickListener au titre "Modifier la photo"
         titleName.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,6 +101,14 @@ public class ModifierProfilPatientActivity extends AppCompatActivity {
 
                 // Afficher un message de succès ou rediriger l'utilisateur
                 Toast.makeText(ModifierProfilPatientActivity.this, "Profil mis à jour avec succès", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ModifierProfilPatientActivity.this, ProfilPatientActivity.class);
+                startActivity(intent);
+            }
+        });
+        Button annulerButton = findViewById(R.id.editButton2);
+        annulerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 Intent intent = new Intent(ModifierProfilPatientActivity.this, ProfilPatientActivity.class);
                 startActivity(intent);
             }
@@ -172,6 +188,8 @@ public class ModifierProfilPatientActivity extends AppCompatActivity {
         // Enregistrer l'image dans les SharedPreferences
         saveImageToSharedPreferences(base64Image);
     }
+
+
 
 
 }
