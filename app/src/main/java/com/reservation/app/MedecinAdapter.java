@@ -7,11 +7,11 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
-public class MedecinAdapter extends ArrayAdapter<MedecinAm> {
+public class MedecinAdapter extends ArrayAdapter<Medecin> {
     private Context context;
     private int resource;
 
-    public MedecinAdapter(Context context, int resource, List<MedecinAm> medecins) {
+    public MedecinAdapter(Context context, int resource, List<Medecin> medecins) {
         super(context, resource, medecins);
         this.context = context;
         this.resource = resource;
@@ -25,15 +25,15 @@ public class MedecinAdapter extends ArrayAdapter<MedecinAm> {
         }
 
         // Récupère le médecin à la position donnée
-        MedecinAm medecin = getItem(position);
+        Medecin medecin = getItem(position);
 
         // Récupère les éléments de la mise en page XML
         TextView textViewNomMedecin = convertView.findViewById(R.id.textViewNomMedecin);
         TextView textViewEmailMedecin = convertView.findViewById(R.id.textViewEmailMedecin);
 
         // Définit les données du médecin sur les éléments de la mise en page XML
-        textViewNomMedecin.setText(medecin.getNom());
-        textViewEmailMedecin.setText(medecin.getEmail());
+        textViewNomMedecin.setText(medecin.getNomMedecin());
+        textViewEmailMedecin.setText(medecin.getEmailMedecin());
 
         // Renvoie la vue mise à jour
         return convertView;

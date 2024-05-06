@@ -14,7 +14,7 @@ import java.util.List;
 public class ActivityChoisirMedecin extends AppCompatActivity {
     TextView tv;
     ListView medecinListView;
-    List<MedecinAm> medecins = new ArrayList<>();
+    List<Medecin> medecins = new ArrayList<>();
     MedecinAdapter adapter;
 
     @Override
@@ -30,8 +30,8 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
         medecinListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MedecinAm medecinSelectionne = medecins.get(position);
-                Toast.makeText(ActivityChoisirMedecin.this, "Médecin sélectionné : " + medecinSelectionne.getNom(), Toast.LENGTH_SHORT).show();
+                Medecin medecinSelectionne = medecins.get(position);
+                Toast.makeText(ActivityChoisirMedecin.this, "Médecin sélectionné : " + medecinSelectionne.getNomMedecin(), Toast.LENGTH_SHORT).show();
                 // Vous pouvez ajouter ici le code pour ouvrir le profil du médecin sélectionné
             }
         });
@@ -51,8 +51,8 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
         // Vous devez charger ici la liste des médecins en fonction de la spécialité sélectionnée
         // Remplacez cette démo par votre logique réelle
         medecins.clear();
-        medecins.add(new MedecinAm("Nom1", "Spécialité1"));
-        medecins.add(new MedecinAm("Nom2", "Spécialité2"));
+        medecins.add(new Medecin("Nom1", "Spécialité1"));
+        medecins.add(new Medecin("Nom2", "Spécialité2"));
         // Ajoutez plus de médecins si nécessaire
         adapter.notifyDataSetChanged();
     }
