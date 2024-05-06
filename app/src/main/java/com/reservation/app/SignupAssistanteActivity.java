@@ -140,7 +140,7 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                 if(userName.length() == 0|| userPrenom.length() == 0 || userMail.length() == 0 || userMdp.length() == 0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
-                    if (Utils.isValidEmail(edMail.getText().toString())) {
+                    if (Utils.isValidEmail(edMail.getText().toString()) && Utils.isValidMDP((userMdp))) {
 
                         db.registerassisstante(userName, userPrenom, userMail, userMdp);
                         SharedPreferences sharedPreferences = getSharedPreferences("shared_prefss", Context.MODE_PRIVATE);
@@ -153,8 +153,19 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(SignupAssistanteActivity.this,FormulaireMedcinActivity.class));
                     } else {
-                        edMail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                        edMail.setBackgroundResource(R.drawable.rouge_backround);
+                        if (!Utils.isValidEmail(edMail.getText().toString())) {
+                            edMail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edMail.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edMail.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                        if (!Utils.isValidMDP(userMdp)) {
+                            edMdp.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edMdp.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edMdp.setBackgroundResource(R.drawable.edittext_background);
+                        }
+
                     }
                 }
             }
@@ -173,6 +184,14 @@ public class SignupAssistanteActivity  extends AppCompatActivity {
 
         public static boolean isValidEmail(CharSequence target) {
             return (target != null && Patterns.EMAIL_ADDRESS.matcher(target).matches());
+        }
+        public static boolean isValidMDP(String passe){
+            if ((passe.length()>=8)){
+                return true;
+            }else {
+                return false;
+            }
+
         }
     }
 
