@@ -1,6 +1,8 @@
 package com.reservation.app;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -232,14 +234,47 @@ public class FormulaireMedcinActivity extends AppCompatActivity {
                 if(userName.length() == 0|| userPrenom.length() == 0 || userNumTel.length() == 0 || userAdresse.length() == 0 || userSpecialite.length() == 0 || userHeureOuverture.length() == 0 || userHeureFermeture.length() == 0 || userJourTravail.length() == 0){
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
                 }else {
-                    if (SignupPatientActivity.Utils.isValidTel(userNumTel) ){
+                    if (SignupPatientActivity.Utils.isValidTel(userNumTel) && Utils.isValidJour(userJourTravail) && Utils.isValidHeure(userHeureOuverture) && Utils.isValidHeure(userHeureFermeture)){
 
                         db.registermedecin(userName, userPrenom, userNumTel, userAdresse , userSpecialite , userHeureOuverture , userHeureFermeture , userJourTravail);
+                        SharedPreferences sharedPreferences = getSharedPreferences("shared_prefsss", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("nom", userName);
+                        editor.putString("prenom", userPrenom);
+                        editor.putString("numTel", userNumTel);
+                        editor.putString("adresse", userAdresse);
+                        editor.putString("specialite", userSpecialite);
+                        editor.putString("heurOuverture", userHeureOuverture);
+                        editor.putString("heurFermeture", userHeureFermeture);
+                        editor.putString("jourTravail", userJourTravail);
+                        editor.apply();
                         Toast.makeText(getApplicationContext(), "Inscription validée", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(FormulaireMedcinActivity.this,ChoisirSpecialitesActivity.class));
+                        startActivity(new Intent(FormulaireMedcinActivity.this,ProfilCoteMedecinActivity.class));
                     } else {
-                        edNumTel.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
-                        edNumTel.setBackgroundResource(R.drawable.rouge_backround);
+                        if (!SignupPatientActivity.Utils.isValidTel(userNumTel)) {
+                            edNumTel.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edNumTel.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edNumTel.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                        if (!Utils.isValidHeure(userHeureOuverture)) {
+                            edHeureOuverture.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edHeureOuverture.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edHeureOuverture.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                        if (!Utils.isValidHeure(userHeureFermeture)) {
+                            edHeureFermeture.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edHeureFermeture.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edHeureFermeture.setBackgroundResource(R.drawable.edittext_background);
+                        }
+                        if (!Utils.isValidJour(userJourTravail)) {
+                            edJourTravail.setTextColor(getResources().getColor(android.R.color.holo_red_dark));
+                            edJourTravail.setBackgroundResource(R.drawable.rouge_backround);
+                        } else {
+                            edJourTravail.setBackgroundResource(R.drawable.edittext_background);
+                        }
                     }
 
 
@@ -254,5 +289,80 @@ public class FormulaireMedcinActivity extends AppCompatActivity {
         });
 
 
+    }
+    public static class Utils {
+        public static boolean isValidJour(String jour){
+            int i=0;
+            char c = jour.charAt(i);
+            if (jour.length()==1){
+                if (c<='7'){
+                    return true;
+                }else {
+                    return false;
+                }
+            }else {
+                return false;
+
+            }
+        }
+        public static boolean isValidHeure(String heure){
+            int i=0;
+            char c=heure.charAt(i);
+            if (c=='0' || c=='1'){
+                i++;
+                c=heure.charAt(i);
+                if (c<='9'){
+                    i++;
+                    c=heure.charAt(i);
+                    if (c==':'){
+                        i++;
+                        c=heure.charAt(i);
+                        if (c<='5'){
+                            i++;
+                            c=heure.charAt(i);
+                            if (c<='9'){
+                                return true;
+                            }else {
+                                return false;
+                            }
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        return false;
+                    }
+                }else {
+                    return false;
+                }
+            }else if (c=='2'){
+                i++;
+                c=heure.charAt(i);
+                if (c<='3'){
+                    i++;
+                    c=heure.charAt(i);
+                    if (c==':'){
+                        i++;
+                        c=heure.charAt(i);
+                        if (c<='5'){
+                            i++;
+                            c=heure.charAt(i);
+                            if (c<='9'){
+                                return true;
+                            }else {
+                                return false;
+                            }
+                        }else {
+                            return false;
+                        }
+                    }else {
+                        return false;
+                    }
+                }else {
+                    return false;
+                }
+            }else {
+                return false;
+            }
+        }
     }
 }

@@ -23,7 +23,7 @@
 
                 <ImageView
                     android:id="@+id/imageView22"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
@@ -97,8 +97,8 @@
                     app:layout_constraintVertical_bias="0.53">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="110dp"
                         android:layout_margin="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/purple_top_buttons"
@@ -106,8 +106,9 @@
 
                         <ImageView
                             android:id="@+id/btnRendezVous"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_margin="7dp"
                             app:srcCompat="@drawable/rendezvouss" />
 
@@ -123,8 +124,8 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="110dp"
                         android:layout_margin="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/purple_top_buttons"
@@ -132,8 +133,9 @@
 
                         <ImageView
                             android:id="@+id/btnNotification"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_margin="7dp"
                             app:srcCompat="@drawable/notifff" />
 
@@ -149,8 +151,8 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="110dp"
                         android:layout_margin="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/purple_top_buttons"
@@ -158,8 +160,9 @@
 
                         <ImageView
                             android:id="@+id/btnEvaluation"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_margin="7dp"
                             app:srcCompat="@drawable/etoile1" />
 
@@ -174,8 +177,8 @@
                             android:textStyle="bold" />
                     </LinearLayout>
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="80dp"
+                        android:layout_height="110dp"
                         android:layout_margin="7dp"
                         android:layout_weight="1"
                         android:background="@drawable/purple_top_buttons"
@@ -183,8 +186,9 @@
 
                         <ImageView
                             android:id="@+id/btnModification"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_gravity="center"
                             android:layout_margin="7dp"
                             app:srcCompat="@drawable/modifierr" />
 
@@ -193,7 +197,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="8dp"
-                            android:text="modifier"
+                            android:text="Modifier"
                             android:textAlignment="center"
                             android:textColor="#7182ef"
                             android:textStyle="bold" />

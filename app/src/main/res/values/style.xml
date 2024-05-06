@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- styles.xml -->
+    <style name="CustomTimePickerStyle">
+        <item name="android:textColor">#E8E8F9</item> <!-- Couleur du texte -->
+        <item name="android:textColorSecondary">#E8E8F9</item> <!-- Couleur du texte secondaire (heures/minutes) -->
+        <item name="android:background">#E8E8F9</item>
+        <item name="android:color">#E8E8F9</item>
+    </style>
+
+</resources>

@@ -1,0 +1,42 @@
+<!-- medecin_item.xml -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:layout_marginStart="14dp"
+    android:layout_marginEnd="14dp"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:background="@drawable/top_button_background">
+
+    <ImageView
+        android:id="@+id/imageViewMedecin"
+        android:layout_width="58dp"
+        android:layout_height="58dp"
+        android:src="@drawable/profile2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="16dp">
+
+        <TextView
+            android:id="@+id/textViewNomMedecin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom du médecin"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewEmailMedecin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email du médecin"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
