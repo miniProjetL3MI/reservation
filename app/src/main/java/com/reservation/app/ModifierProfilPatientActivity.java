@@ -29,6 +29,9 @@ import java.io.IOException;
 
 public class ModifierProfilPatientActivity extends AppCompatActivity {
 
+
+
+
     TextView nomPatient, prenomPatient, dateNai, NumTel;
     Button buttonModifierProfil;
     ImageView profileImg;

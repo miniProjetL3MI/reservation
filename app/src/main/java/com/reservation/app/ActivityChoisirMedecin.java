@@ -39,6 +39,8 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
         medecins.add(new MedecinAm("Dr. Johnson", "email2@example.com"));
         medecins.add(new MedecinAm("Dr. Brown", "email3@example.com"));
 
+
+
         // Crée une instance de l'adaptateur personnalisé et l'associe à la ListView
         MedecinAdapter adapter = new MedecinAdapter(this, R.layout.medecin_item, medecins);
         medecinListView.setAdapter(adapter);

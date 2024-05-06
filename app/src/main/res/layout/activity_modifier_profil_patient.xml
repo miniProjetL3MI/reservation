@@ -16,6 +16,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/pic_background" />
 
+
+
     <ImageView
         android:id="@+id/profileImg"
         android:layout_width="wrap_content"
