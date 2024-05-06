@@ -63,7 +63,6 @@
                 android:textStyle="italic|bold"
                 tools:ignore="RtlCompat" />
 
-            <!-- activity_liste_notification_patient.xml -->
             <ListView
                 android:id="@+id/listViewNotifications"
                 android:layout_width="match_parent"
