@@ -2,6 +2,10 @@ package com.reservation.app;
 import android.os.Parcel;
 import android.os.Parcelable;
 public class Medecin implements Parcelable{
+    public Medecin() {
+        // Constructeur par défaut
+    }
+
     public int getIdMedecin() {
         return idMedecin;
     }

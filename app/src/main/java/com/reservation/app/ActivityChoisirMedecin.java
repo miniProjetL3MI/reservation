@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
+import android.util.Log;
+
 
 public class ActivityChoisirMedecin extends AppCompatActivity {
     TextView tv;
@@ -54,6 +56,12 @@ public class ActivityChoisirMedecin extends AppCompatActivity {
         medecins.add(new Medecin("Nom1", "Spécialité1"));
         medecins.add(new Medecin("Nom2", "Spécialité2"));
         // Ajoutez plus de médecins si nécessaire
+        // Ajoutez ce code juste avant adapter.notifyDataSetChanged()
+
+        for (Medecin medecin : medecins) {
+            Log.d("Medecin", "Nom : " + medecin.getNomMedecin() + ", Spécialité : " + medecin.getSpecialite());
+        }
+
         adapter.notifyDataSetChanged();
     }
 }
