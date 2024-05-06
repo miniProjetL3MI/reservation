@@ -83,35 +83,32 @@ public class LoginActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String username=edUserName.getText().toString();
-                String password=edPassword.getText().toString();
-                if(username.length()==0 || password.length()==0){
+                String username = edUserName.getText().toString();
+                String password = edPassword.getText().toString();
+                if (username.length() == 0 || password.length() == 0) {
                     Toast.makeText(getApplicationContext(), "Remplissez les champs s'il vous plait", Toast.LENGTH_SHORT).show();
-                }else {
-                     if(db.login(username, password)==1 ){
+                } else {
+                    if (db.login(username, password) == 1) {
                         Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
-                         SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
-                         SharedPreferences.Editor editor = sharedPreferences.edit();
-                         editor.putString("email",username);
-                         editor.apply();
-                         startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
-                     }else{
-
-                         if ((db.login1(username, password)==1)){
-                             Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
-                             SharedPreferences sharedPreferences =getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
-                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                             editor.putString("email",username);
-                             editor.apply();
-                             startActivity(new Intent(LoginActivity.this, ProfilCoteMedecinActivity.class));
-
-                         }
-
-                     }
+                        SharedPreferences sharedPreferences = getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("email", username);
+                        editor.apply();
+                        startActivity(new Intent(LoginActivity.this, ChoisirSpecialitesActivity.class));
+                    } else if (db.login1(username, password) == 1) {
+                        Toast.makeText(getApplicationContext(), "Authentification validée", Toast.LENGTH_SHORT).show();
+                        SharedPreferences sharedPreferences = getSharedPreferences("shared_pref", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("email", username);
+                        editor.apply();
+                        startActivity(new Intent(LoginActivity.this, ProfilCoteMedecinActivity.class));
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Email ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
+                    }
                 }
-
             }
         });
+
         newUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

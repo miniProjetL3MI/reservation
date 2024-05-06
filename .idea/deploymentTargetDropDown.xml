@@ -5,13 +5,13 @@
       <entry key="ActivityChoisirMedecin">
         <State />
       </entry>
-      <entry key="EvaluerActivity">
+      <entry key="LoginActivity">
         <State />
       </entry>
       <entry key="ModifierProfilPatientActivity">
         <State />
       </entry>
-      <entry key="ProfilCoteMedecinActivity">
+      <entry key="ProfilPatientActivity">
         <State />
       </entry>
       <entry key="app">
