@@ -1,10 +1,16 @@
 package com.reservation.app;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import java.util.List;
+import java.util.ArrayList;
+
+
+
 
 import androidx.annotation.Nullable;
 
@@ -132,4 +138,34 @@ public class Database extends SQLiteOpenHelper {
         db.update("patient", values, "email=?", new String[]{email});
         db.close();
     }
+
+    //methode pour recuperer les donnees du medecin
+    @SuppressLint("Range")
+    public List<Medecin> getAllMedecins() {
+        List<Medecin> medecins = new ArrayList<>();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM medecin", null);
+        if (cursor != null && cursor.moveToFirst()) {
+            do {
+                Medecin medecin = new Medecin();
+                medecin.setIdMedecin(cursor.getInt(cursor.getColumnIndex("idMedecin")));
+                medecin.setNomMedecin(cursor.getString(cursor.getColumnIndex("nom")));
+                medecin.setPrenomMedecin(cursor.getString(cursor.getColumnIndex("prenom")));
+                medecin.setNumTel(cursor.getString(cursor.getColumnIndex("numTelephone")));
+                medecin.setSpecialite(cursor.getString(cursor.getColumnIndex("specialite")));
+                medecin.setEmailMedecin(cursor.getString(cursor.getColumnIndex("email")));
+                medecin.setHeurOuverture(cursor.getString(cursor.getColumnIndex("heurOuverture")));
+                medecin.setHeurFermeture(cursor.getString(cursor.getColumnIndex("heurFermeture")));
+                medecin.setJourTravail(cursor.getString(cursor.getColumnIndex("jourTravail")));
+                medecins.add(medecin);
+            } while (cursor.moveToNext());
+        }
+        if (cursor != null) {
+            cursor.close();
+        }
+        db.close();
+        return medecins;
+    }
+
+
 }
